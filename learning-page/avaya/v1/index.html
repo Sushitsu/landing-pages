@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Avaya Login</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAMAAABg3Am1AAAA21BMVEX/////AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AAD/AADxCU1nAAAASHRSTlMAIJlen/MQ+4Gb7w587fkKHHbpcJXnCGo0btcCgxpiFPXhBJPjaHooj63dhzIWuUDJUFjVXFKN0cVKy4lEv8Ohpy69szoiZDgL/ddkAAAAAW9yTlQBz6J3mgAAAYxJREFUSMfNlFlXwjAQhQsUqqACahEsyFIRsIUWcQMXBLf5/7/ISqYlaZOQnuOD9ym9nZuvnZyJpv2JMtlAuRQBHQLlC+oA4zcAe8qB/U09FEvpAAAH6QAAh2qIzFEYUEREgABRVqivbAEAVYVAlqqH43I6AMDJzsApUw9mTRFwVi+SRUMNcG5pTSVECwEXmtbuqCAQ0O0Fa5usL3sKgAb9O31JwGa6r1M4OeCKPA6M6IcEGsbmYESer60dACc0XDy9nBzQGUfORIpoYePtreVJEQgwKpTnRwef1BgBOm1OEXEjAQwYd0bcmSUEjFj7FhF3icA9vnFZ2+oS+0EEmMRf9AWIEODFAzWTi2jnif2YbEYVt5pyAfNkoISzuuABYMGIfLfD2ewJuJqR3bAfPgcQ15weK3iOAo6gHl7I1YOD9LoTAFDfFCxjCCEA4I2ZVUQUQsDQTWjFzCoeawgwWsJhr2PJmgG8S+6fNdZ8BOsmcM+eVTirEwpgWrI71I/a9vmF8qSX7gqrvrX/px8xZccPYXAveQAAAABJRU5ErkJggg==" type="image/png">
+
+        <style>
+            body {
+                font-family: 'Proxima Nova', proxima-nova, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                font-size: 100%;
+                font-weight: 400;
+                color: #4c4c4c;
+                background: #fff;
+                margin: 0;
+                line-height: 20px;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            .container {
+                width: 100% !important;
+                background-color: #fff;
+                max-width: 1170px;
+                margin-right: auto;
+                margin-left: auto;
+            }
+
+            .container .butler {
+                position: relative;
+                padding: 25px 0 5px 0;
+                width: 100%;
+                float: right;
+                z-index: 10;
+                background-image: -webkit-linear-gradient(top, #ff2709, #b50400);
+                font-size: 11px;
+                clear: both;
+            }
+
+            #butler {
+                height: 30px;
+                background-color: #b50400;
+            }
+
+            header {
+                display: flex;
+                align-items: center;
+                height: 44px;
+                background: rgba(237, 237, 237, .9);
+                font-size: 14px;
+                position: relative;
+                z-index: 1;
+                padding: 10px;
+            }
+
+            .logo {
+                margin: 10px 0 0 23px;
+            }
+
+            img {
+                max-width: 100%;
+                height: auto;
+                vertical-align: middle;
+                border: 0;
+            }
+
+            .header-text {
+                color: #666666;
+                font-weight: 600;
+                display: block;
+                padding: 10px 13px 7px;
+                margin: 0 0 0 12rem;
+                font-size: 13px;
+            }
+
+            .breadcrumb-bar {
+                border-bottom: 1px solid #ccc;
+                margin: 15px -2px;
+            }
+
+            nav {
+                margin: 10px 7px;
+            }
+
+            nav a {
+                color: #4c4c4c;
+                text-decoration: none;
+                font-size: 16px;
+            }
+
+            nav a:hover {
+                text-decoration: underline;
+                color: #CD1F1E;
+            }
+
+            nav .left-row {
+                background: url('data:image/webp;base64,UklGRk4AAABXRUJQVlA4WAoAAAAQAAAAAgAABAAAQUxQSBAAAAAA3XcAEcxmAIi7ZswRiCIAVlA4IBgAAAAwAQCdASoDAAUAAwBQJaQAA3AA/u4DAAA=') center no-repeat;
+                padding-right: 10px;
+            }
+
+            nav .text {
+                color: #CD1F1E;
+                padding: 5px;
+            }
+
+            main {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                margin-bottom: 20px;
+            }
+
+            h1 {
+                color: #000000;
+                font-weight: 600;
+                font-size: 1.8em;
+                line-height: 1em;
+                margin: 10px 0 19px 15px;
+            }
+
+            .content {
+                width: 100%;
+                max-width: 770px;
+            }
+
+            .login-form {
+                background-color: #f5f5f5;
+                border: 1px solid #e3e3e3;
+                border-radius: 2px;
+                width: 100%;
+                display: block;
+                min-height: 340px;
+                padding: 20px;
+                box-sizing: border-box;
+                margin-top: 60px;
+            }
+
+            .login-form h2 {
+                color: #4c4c4c;
+                font-size: 15px;
+                margin: 0 auto;
+                font-weight: revert;
+            }
+
+            .login-form form {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .login-form label {
+                font-size: 14px;
+            }
+
+            .login-form .username {
+                margin: 2rem 5.8rem 5px;
+            }
+
+            .login-form .password {
+                margin: 1rem 5.8rem 5px;
+            }
+
+            .login-form input {
+                background-color: #fff;
+                color: #555;
+                padding: 7px;
+                border: 1px solid #ccc;
+                border-radius: 2px;
+                margin: 0 21.5rem 10px 11.2rem;
+                box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+                transition: border linear .2s, box-shadow linear .2s;
+                width: 206px;
+            }
+
+            .login-form input#username::placeholder {
+                color: #999;
+                font-size: 14px;
+                font-weight: 100;
+            }
+
+            .login-form input#password::placeholder {
+                color: #999;
+                font-size: 14px;
+                font-weight: 100;
+            }
+
+            .forgot-password {
+                margin: 10px 0;
+                color: #4B4B4B;
+                text-decoration: none;
+                font-size: 9.5px;
+                font-weight: 800;
+            }
+
+            .forgot-password:hover {
+                text-decoration: underline;
+                color: #CD1F1E;
+            }
+
+            .login-form button {
+                padding: 6px 12px;
+                background-color: #363636;
+                color: #fff;
+                border: 1px solid #ccc;
+                border-radius: 2px;
+                cursor: pointer;
+                margin-right: 40.7rem;
+                text-shadow: 0 -1px 0 rgba(0, 0, 0, .25);
+                text-align: center;
+            }
+
+            .login-form button:hover {
+                background-color: #555;
+            }
+
+            footer {
+                font-size: 14px;
+                background-color: #333;
+                color: #f1f1f1;
+                font-weight: 100;
+                margin: 0 auto;
+                max-width: 1170px;
+                text-align: left;
+                padding: 40px 20px;
+            }
+
+            .footer {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                max-width: 1170px;
+                padding: 0 0 40px;
+                margin-bottom: 30px;
+                border-bottom: 1px solid #686868;
+            }
+
+            .footer-section {
+                flex: 1;
+                min-width: 200px;
+                margin: 0 10px;
+            }
+
+            .footer-section h3 {
+                color: #f1f1f1;
+                margin: 0 0 8px;
+                font-size: 18px;
+            }
+
+            .footer-section ul {
+                list-style: none;
+                padding: 0;
+                margin: 14px 0;
+            }
+
+            .footer-section ul li {
+                margin-bottom: 6px;
+                font-size: 14px;
+                color: #fff;
+            }
+
+            .footer-section ul li a {
+                color: #c0c0c0;
+                text-decoration: none;
+                margin: 0 2px 0 0;
+                font-size: 14px;
+                font-weight: 100;
+            }
+
+            .footer-section ul li a:hover {
+                text-decoration: none;
+                color: #c00;
+            }
+
+            .footer-section ul li .hover:hover {
+                text-decoration: underline;
+                color: #c00;
+            }
+
+            .footer-section ul li svg {
+                color: #fff;
+                width: 10px;
+                vertical-align: middle;
+                stroke: currentColor;
+                fill: currentColor;
+            }
+
+            .footer-section ul li svg:hover {
+                color: #c00;
+            }
+
+            .bottom {
+                color: #A2A2A4;
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                margin: 0 auto 4rem;
+                padding-right: 3.5rem;
+            }
+
+            .bottom .bottom-section {
+                text-align: center;
+            }
+
+            .bottom .bottom-section ul {
+                margin: 0;
+                padding: 0;
+                text-decoration: none;
+            }
+
+            .bottom .bottom-section ul li {
+                display: inline-block;
+                margin-right: 10px;
+                list-style: none;
+                color: #747475;
+            }
+
+            .bottom .bottom-section ul li a {
+                color: #747475;
+                line-height: 1em !important;
+                text-decoration: none;
+                font-size: 14px;
+                font-weight: 100;
+                text-align: center;
+            }
+
+            .bottom .bottom-section ul li a:hover {
+                text-decoration: underline;
+                color: #c00;
+            }
+
+            .bottom .bottom-section p {
+                color: #747475;
+                font-size: 14px;
+                font-weight: 100;
+                margin: 0;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="butler"></div>
+            <header>
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAF8AAAAbCAMAAAAtW6O9AAAAM1BMVEUAAADtHC7tHC7tHC7tHC7tHC7tHC7tHC7tHC7tHC7tHC7tHC7tHC7tHC7t
+                HC7tHC7tHC6mGQePAAAAEHRSTlMAcL9Qr58gMBDv30CAYM+P6AwZEgAAAAFvck5UAc+id5oAAAGcSURBVEjHvZZRtoMgDEQ1KCqCZv+rfYBEkgj9aX05p3WCo71BDB2G/4sRwKSjAYCRn5ji
+                QBYzgE3HRTtm7WjEuiE6IUoYRJyT2Ekkx8Yc6cQkHI3w8RwGUqGegJhaEpdSjimmu3Q08ZsF7By/SBvFcTtSBsrRxi8YnkSeUoGP20qDwlHxEdcOPrjCkRMGl4mWJOLHUzJpfOFQERJDIJAz
+                ikXhz4l9pgKgTvRJV0mHjAudCrihcykTDfnyXRbVOYhileOBb9jEz3yl8BEgPEei61D4TrNkvE1VtBNeKEt07ToUftAwiSI8CiI8WsRj1/HEj1ehmMzGAzGEV1C4Y5IOge/VWk4FSPz9Zsl4
+                1w0/OTg+nj7FankBAViyZcNYYfKEUOVNB8MvEeR653AlbMaj1+mgB9d0MPwSR203Ng9AlVectbld7cA9HaNof0b2JGAFsNc5PBu5wU7LlQ0SZE8V/fJobQj3zRx2tgz+czbuPV5vRmsR94Zm
+                eC+MeSa456Hr+C5AUv86drmL/Txexjcv47t38cPL+Cf9p/oUf7KjK9t/nLPIAAAAAElFTkSuQmCC" alt="Avaya Logo" class="logo">
+                <div class="header-text">GSA Authorized Partner Portal</div>
+            </header>
+            <div class="breadcrumb-bar">
+                <nav>
+                    <a href="#">Home</a>
+                    <a class="left-row"></a>
+                    <a class="text" href="#">Login Now</a>
+                </nav>
+            </div>
+            <main>
+                <h1>Login Now</h1>
+                <div class="content">
+                    <div class="login-form">
+                        <h2>LOGIN INFORMATION</h2>
+                        <form>
+                            <label class="username" for="username">Username:</label>
+                            <input type="text" id="username" placeholder="Username" name="username">
+                            <label class="password" for="password">Password:</label>
+                            <input type="password" id="password" placeholder="* * * * *" name="password">
+                            <a href="#" class="forgot-password">Forgot Password?</a>
+                            <button type="submit">SUBMIT</button>
+                        </form>
+                    </div>
+                </div>
+            </main>
+            <footer>
+                <div class="footer">
+                    <div class="footer-section">
+                        <h3>Discover</h3>
+                        <ul>
+                            <li>
+                                <a href="https://www.avaya.com/en/products/">Products</a>
+                            </li>
+                            <li>
+                                <a href="https://www.avaya.com/en/solutions/">Solutions</a>
+                            </li>
+                            <li>
+                                <a href="https://www.avaya.com/en/services/">Services</a>
+                            </li>
+                            <li>
+                                <a href="https://www.avaya.com/en/industry/">Industries</a>
+                            </li>
+                            <li>
+                                <a href="https://www.avaya.com/en/case-studies/">Case Studies</a>
+                            </li>
+                            <li>
+                                <a href="https://www.avaya.com/en/about-avaya/doing-business/promotions/">Programs and Promotions</a>
+                            </li>
+                            <li>
+                                <a href="https://www.avaya.com/en/about-avaya/doing-business/#1399676201225">Authentic Avaya</a>
+                            </li>
+                            <li>
+                                <a href="https://www.avaya.com/blogs/">Avaya Connected Blog</a>
+                            </li>
+                            <li>
+                                <a href="https://www.avaya.com/en/videos/">Avaya TV</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Info for</h3>
+                        <ul>
+                            <li>
+                                <a href="https://www.avaya.com/devconnect">Developers</a>
+                            </li>
+                            <li>
+                                <a href="https://www.avaya.com/en/prospectivepartners/">Channel Partners</a>
+                            </li>
+                            <li>
+                                <a href="https://www.avaya.com/en/partners/devconnect/gallery/">Technology Partners</a>
+                            </li>
+                            <li>
+                                <a href="https://www.avaya.com/en/partners/consultants/">Consultants</a>
+                            </li>
+                            <li>
+                                <a href="https://www.avaya.com/en/contacts/">Investors</a
+                                ></li>
+                            <li>
+                                <a href="https://www.avaya.com/en/contacts/">Media Analysts</a>
+                            </li>
+                            <li>
+                                <a href="https://www.avaya.com/en/about-avaya/doing-business-with-avaya/">Suppliers</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Connect with us</h3>
+                        <ul>
+                            <li>
+                                <a href="https://support.avaya.com/support/en/public">Support
+                                    <a href="https://support.avaya.com/support/en/public">
+                                        <svg fill="#ffffff" version="1.1" id="Cap_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 384.97 384.97" xml:space="preserve" stroke="#ffffff" stroke-width="38.4971" transform="rotate(0)matrix(1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.769942"></g><g id="SVGRepo_iconCarrier"> <g> <g id="Sign_Out"> <path d="M180.455,360.91H24.061V24.061h156.394c6.641,0,12.03-5.39,12.03-12.03s-5.39-12.03-12.03-12.03H12.03 C5.39,0.001,0,5.39,0,12.031V372.94c0,6.641,5.39,12.03,12.03,12.03h168.424c6.641,0,12.03-5.39,12.03-12.03 C192.485,366.299,187.095,360.91,180.455,360.91z"></path> <path d="M381.481,184.088l-83.009-84.2c-4.704-4.752-12.319-4.74-17.011,0c-4.704,4.74-4.704,12.439,0,17.179l62.558,63.46H96.279 c-6.641,0-12.03,5.438-12.03,12.151c0,6.713,5.39,12.151,12.03,12.151h247.74l-62.558,63.46c-4.704,4.752-4.704,12.439,0,17.179 c4.704,4.752,12.319,4.752,17.011,0l82.997-84.2C386.113,196.588,386.161,188.756,381.481,184.088z"></path> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </g> </g></svg>
+                                    </a>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.avaya.com/en/partner-locator/">Find a Channel Partner</a>
+                            </li>
+                            <li>
+                                <a href="https://www.avaya.com/en/partners/devconnect/gallery/">Find a Technology Partner
+                                    <a href="https://www.avaya.com/en/partners/devconnect/gallery/">
+                                        <svg fill="#ffffff" version="1.1" id="Cap_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 384.97 384.97" xml:space="preserve" stroke="#ffffff" stroke-width="38.4971" transform="rotate(0)matrix(1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.769942"></g><g id="SVGRepo_iconCarrier"> <g> <g id="Sign_Out"> <path d="M180.455,360.91H24.061V24.061h156.394c6.641,0,12.03-5.39,12.03-12.03s-5.39-12.03-12.03-12.03H12.03 C5.39,0.001,0,5.39,0,12.031V372.94c0,6.641,5.39,12.03,12.03,12.03h168.424c6.641,0,12.03-5.39,12.03-12.03 C192.485,366.299,187.095,360.91,180.455,360.91z"></path> <path d="M381.481,184.088l-83.009-84.2c-4.704-4.752-12.319-4.74-17.011,0c-4.704,4.74-4.704,12.439,0,17.179l62.558,63.46H96.279 c-6.641,0-12.03,5.438-12.03,12.151c0,6.713,5.39,12.151,12.03,12.151h247.74l-62.558,63.46c-4.704,4.752-4.704,12.439,0,17.179 c4.704,4.752,12.319,4.752,17.011,0l82.997-84.2C386.113,196.588,386.161,188.756,381.481,184.088z"></path> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </g> </g></svg>
+                                    </a>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.avaya.com/en/about-avaya/">Executive Briefing Program</a>
+                            </li>
+                            <li>
+                                <a href="https://www.avaya-learning.com/lms/">Avaya Learning Services
+                                    <a href="https://www.avaya-learning.com/lms/">
+                                        <svg fill="#ffffff" version="1.1" id="Cap_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 384.97 384.97" xml:space="preserve" stroke="#ffffff" stroke-width="38.4971" transform="rotate(0)matrix(1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.769942"></g><g id="SVGRepo_iconCarrier"> <g> <g id="Sign_Out"> <path d="M180.455,360.91H24.061V24.061h156.394c6.641,0,12.03-5.39,12.03-12.03s-5.39-12.03-12.03-12.03H12.03 C5.39,0.001,0,5.39,0,12.031V372.94c0,6.641,5.39,12.03,12.03,12.03h168.424c6.641,0,12.03-5.39,12.03-12.03 C192.485,366.299,187.095,360.91,180.455,360.91z"></path> <path d="M381.481,184.088l-83.009-84.2c-4.704-4.752-12.319-4.74-17.011,0c-4.704,4.74-4.704,12.439,0,17.179l62.558,63.46H96.279 c-6.641,0-12.03,5.438-12.03,12.151c0,6.713,5.39,12.151,12.03,12.151h247.74l-62.558,63.46c-4.704,4.752-4.704,12.439,0,17.179 c4.704,4.752,12.319,4.752,17.011,0l82.997-84.2C386.113,196.588,386.161,188.756,381.481,184.088z"></path> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </g> </g></svg>
+                                    </a>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.avaya.com/en/contacts/">Contacts</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>About Avaya</h3>
+                        <ul>
+                            <li>
+                                <a class="hover" href="https://www.avaya.com/en/about-avaya/">Our Company</a>
+                            </li>
+                            <li>
+                                <a class="hover" href="https://www.avaya.com/en/about-avaya/newsroom/">Events</a>
+                            </li>
+                            <li>
+                                <a class="hover" href="https://www.avaya.com/en/about-avaya/newsroom/">Newsroom</a>
+                            </li>
+                            <li>
+                                <a class="hover" href="http://investors.avaya.com/">Investor Relations
+                                    <a href="http://investors.avaya.com/">
+                                        <svg fill="#ffffff" version="1.1" id="Cap_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 384.97 384.97" xml:space="preserve" stroke="#ffffff" stroke-width="38.4971" transform="rotate(0)matrix(1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.769942"></g><g id="SVGRepo_iconCarrier"> <g> <g id="Sign_Out"> <path d="M180.455,360.91H24.061V24.061h156.394c6.641,0,12.03-5.39,12.03-12.03s-5.39-12.03-12.03-12.03H12.03 C5.39,0.001,0,5.39,0,12.031V372.94c0,6.641,5.39,12.03,12.03,12.03h168.424c6.641,0,12.03-5.39,12.03-12.03 C192.485,366.299,187.095,360.91,180.455,360.91z"></path> <path d="M381.481,184.088l-83.009-84.2c-4.704-4.752-12.319-4.74-17.011,0c-4.704,4.74-4.704,12.439,0,17.179l62.558,63.46H96.279 c-6.641,0-12.03,5.438-12.03,12.151c0,6.713,5.39,12.151,12.03,12.151h247.74l-62.558,63.46c-4.704,4.752-4.704,12.439,0,17.179 c4.704,4.752,12.319,4.752,17.011,0l82.997-84.2C386.113,196.588,386.161,188.756,381.481,184.088z"></path> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </g> </g></svg>
+                                    </a>
+                                </a>
+                            <li>
+                                <a class="hover" href="https://www.avaya.com/en/about-avaya/corporate-responsibility/">Corporate Responsibility</a>
+                            </li>
+                            <li>
+                                <a class="hover" href="https://www.avaya.com/en/about-avaya/doing-business/#1399675112345">International Avaya Users Group - IAUG</a>
+                            </li>
+                            <li>
+                                <a class="hover" href="https://careers.avaya.com/">Careers
+                                    <a href="https://careers.avaya.com/">
+                                        <svg fill="#ffffff" version="1.1" id="Cap_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 384.97 384.97" xml:space="preserve" stroke="#ffffff" stroke-width="38.4971" transform="rotate(0)matrix(1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.769942"></g><g id="SVGRepo_iconCarrier"> <g> <g id="Sign_Out"> <path d="M180.455,360.91H24.061V24.061h156.394c6.641,0,12.03-5.39,12.03-12.03s-5.39-12.03-12.03-12.03H12.03 C5.39,0.001,0,5.39,0,12.031V372.94c0,6.641,5.39,12.03,12.03,12.03h168.424c6.641,0,12.03-5.39,12.03-12.03 C192.485,366.299,187.095,360.91,180.455,360.91z"></path> <path d="M381.481,184.088l-83.009-84.2c-4.704-4.752-12.319-4.74-17.011,0c-4.704,4.74-4.704,12.439,0,17.179l62.558,63.46H96.279 c-6.641,0-12.03,5.438-12.03,12.151c0,6.713,5.39,12.151,12.03,12.151h247.74l-62.558,63.46c-4.704,4.752-4.704,12.439,0,17.179 c4.704,4.752,12.319,4.752,17.011,0l82.997-84.2C386.113,196.588,386.161,188.756,381.481,184.088z"></path> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </g> </g></svg>
+                                    </a>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="bottom-section">
+                        <ul>
+                            <li>
+                                <a href="https://www.avaya.com/en/sitemap/">Sitemap</a>
+                            </li>
+                            <li>
+                                <a href="https://www.avaya.com/en/termsofuse/">Terms of Use</a>
+                            </li>
+                            <li>
+                                <a href="https://www.avaya.com/en/privacy/commitment/">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="">Cookies</a></li>
+                            <li>
+                                <a href="https://www.avaya.com/en/accessibility/">Accessibility</a>
+                            </li>
+                            <li>© 2024 Avaya Inc.</li>
+                        </ul>
+                        <p>Avaya Inc., 4655 Great America Parkway, Santa Clara, CA 95054-1233 USA</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

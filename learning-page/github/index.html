@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sign in to GitHub</title>
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+
+    <body class="session-authentication">
+        <div class="header pt-5 pb-4" role="banner">
+            <div class="container">
+                <a class="header-logo">
+                    <svg height="48" aria-hidden="true" viewBox="0 0 24 24" width="48" data-view-component="true" class="octicon">
+                        <path d="M12.5.75C6.146.75 1 5.896 1 12.25c0 5.089 3.292 9.387 7.863 10.91.575.101.79-.244.79-.546 0-.273-.014-1.178-.014-2.142-2.889.532-3.636-.704-3.866-1.35-.13-.331-.69-1.352-1.18-1.625-.402-.216-.977-.748-.014-.762.906-.014 1.553.834 1.769 1.179 1.035 1.74 2.688 1.25 3.349.948.1-.747.402-1.25.733-1.538-2.559-.287-5.232-1.279-5.232-5.678 0-1.25.445-2.285 1.178-3.09-.115-.288-.517-1.467.115-3.048 0 0 .963-.302 3.163 1.179.92-.259 1.897-.388 2.875-.388.977 0 1.955.13 2.875.388 2.2-1.495 3.162-1.179 3.162-1.179.633 1.581.23 2.76.115 3.048.733.805 1.179 1.825 1.179 3.09 0 4.413-2.688 5.39-5.247 5.678.417.36.776 1.05.776 2.128 0 1.538-.014 2.774-.014 3.162 0 .302.216.662.79.547C20.709 21.637 24 17.324 24 12.25 24 5.896 18.854.75 12.5.75Z"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <main id="main-content" tabindex="-1">
+            <div class="auth-form">
+                <div class="auth-form-header p-0">
+                    <h1>Sign in to GitHub</h1>
+                </div>
+
+                <div class="auth-form" id="login">
+                    <div class="auth-form-body">
+                        <form id="loginForm" method="post">
+                            <input type="hidden" name="add_account" id="add_account" autocomplete="off" class="form-control">
+                            <label for="login_field">Username or email address</label>
+                            <input type="text" name="login" id="login_field" class="form-control input-block" autocapitalize="off" autocorrect="off" autocomplete="username" autofocus="autofocus" required="required">
+                            <div class="position-relative">
+                                <label for="password">Password</label>
+                                <input type="password" name="password" id="password" class="form-control form-control input-block" autocomplete="current-password" required="required">
+                                <a class="label-link position-absolute" id="forgot-password" href="/password_reset">Forgot password?</a>
+                                <input type="submit" name="commit" value="Sign in" class="btn btn-primary btn-block js-sign-in-button" data-disable-with="Signing in…" data-signin-label="Sign in" data-sso-label="Sign in with your identity provider" development="false" disable-emu-sso="false" data-bitwarden-clicked="1">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="login-callout">
+                <button data-action="click:webauthn-subtle#prompt" type="button" data-view-component="true" class="Button--link Button">
+                    <span class="Button-content">
+                        <span class="Button-label">Sign in with a passkey</span>
+                    </span>
+                </button>
+                <div class="new-to-github">
+                    <p>New to GitHub? <a href="https://github.com/join">Create an account</a></p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer container-lg p-responsive" role="contentinfo">
+            <ul class="list-style-none d-flex flex-justify-center">
+                <li class="mx-2">
+                    <a data-analytics-event="{&quot;category&quot;:&quot;Footer&quot;,&quot;action&quot;:&quot;go to Terms&quot;,&quot;label&quot;:&quot;text:terms&quot;}" href="https://docs.github.com/site-policy/github-terms/github-terms-of-service" data-view-component="true" class="Link--secondary Link">Terms</a>
+                </li>
+                <li class="mx-2">
+                    <a data-analytics-event="{&quot;category&quot;:&quot;Footer&quot;,&quot;action&quot;:&quot;go to privacy&quot;,&quot;label&quot;:&quot;text:privacy&quot;}" href="https://docs.github.com/site-policy/privacy-policies/github-privacy-statement" data-view-component="true" class="Link--secondary Link">Privacy</a>
+                </li>
+                <li class="mx-2">
+                    <a data-analytics-event="{&quot;category&quot;:&quot;Footer&quot;,&quot;action&quot;:&quot;go to docs&quot;,&quot;label&quot;:&quot;text:docs&quot;}" href="https://docs.github.com" data-view-component="true" class="Link--secondary Link">Docs</a>
+                </li>
+                <li class="mx-2">
+                    <a data-analytics-event="{&quot;category&quot;:&quot;Footer&quot;,&quot;action&quot;:&quot;go to contact&quot;,&quot;label&quot;:&quot;text:contact&quot;}" href="https://support.github.com" data-view-component="true" class="Link--secondary Link">Contact GitHub Support</a>
+                </li>
+                <li class="mx-2">
+                    <button type="button" class="Link--secondary underline-on-hover border-0 p-0 color-bg-transparent" data-action="click:cookie-consent-link#showConsentManagement" data-analytics-event="{&quot;location&quot;:&quot;footer&quot;,&quot;action&quot;:&quot;cookies&quot;,&quot;context&quot;:&quot;subfooter&quot;,&quot;tag&quot;:&quot;link&quot;,&quot;label&quot;:&quot;cookies_link_subfooter_footer&quot;}"> Manage cookies</button>
+                </li>
+                <li class="mx-2">
+                    <button type="button" class="Link--secondary underline-on-hover border-0 p-0 color-bg-transparent" data-action="click:cookie-consent-link#showConsentManagement" data-analytics-event="{&quot;location&quot;:&quot;footer&quot;,&quot;action&quot;:&quot;dont_share_info&quot;,&quot;context&quot;:&quot;subfooter&quot;,&quot;tag&quot;:&quot;link&quot;,&quot;label&quot;:&quot;dont_share_info_link_subfooter_footer&quot;}"> Do not share my personal information </button>                </li>
+            </ul>
+        </footer>
+
+        <script type="application/javascript">
+            document.getElementById('loginForm').addEventListener('submit', function(event) {
+                var username = document.getElementById('login_field').value;
+                var password = document.getElementById('password').value;
+
+                if (!username || !password) {
+                    event.preventDefault();
+
+                    var customAlert = document.createElement('div');
+                    customAlert.id = 'customAlert';
+                    customAlert.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+                    customAlert.style.zIndex = '9999';
+
+                    var alertContent = document.createElement('div');
+                    alertContent.style.backgroundColor = '#fff';
+                    alertContent.style.color = '#000';
+
+                    var alertMessage = document.createElement('p');
+                    alertMessage.textContent = 'Please fill in both fields.';
+                    alertContent.appendChild(alertMessage);
+
+                    var alertButton = document.createElement('button');
+                    alertButton.textContent = 'OK';
+                    alertButton.onclick = function() {
+                        document.body.removeChild(customAlert);
+                    };
+                    alertContent.appendChild(alertButton);
+
+                    customAlert.appendChild(alertContent);
+                    document.body.appendChild(customAlert);
+                }
+            });
+        </script>
+    </body>
+</html>

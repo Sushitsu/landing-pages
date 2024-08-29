@@ -1,0 +1,598 @@
+<!Doctype>
+<html lang="en" translate="no" class="notranslate hydrated">
+    <head>
+        <meta charset="utf-8">
+        <style data-styles="">
+            lsi-accordion,lsi-alert,lsi-autocomplete,lsi-badge,lsi-button,lsi-checkbox,lsi-dropdown,lsi-filter,lsi-icon-action,lsi-icon-banner,lsi-icon-bot,lsi-icon-calendar,
+            lsi-icon-campaign,lsi-icon-carret-down,lsi-icon-carret-up,lsi-icon-check,lsi-icon-circle,lsi-icon-circle-danger,lsi-icon-circle-draft,lsi-icon-circle-info,
+            lsi-icon-circle-right-arrow,lsi-icon-circle-success,lsi-icon-circle-warning,lsi-icon-close,lsi-icon-disconnect,lsi-icon-dot,lsi-icon-down-arrow,lsi-icon-download,
+            lsi-icon-end-arrow,lsi-icon-export,lsi-icon-group,lsi-icon-link,lsi-icon-lock,lsi-icon-logo,lsi-icon-logo-round,lsi-icon-new-close,lsi-icon-no-campaign,
+            lsi-icon-password-not-visible,lsi-icon-password-visible,lsi-icon-placeholder,lsi-icon-plan-branding,lsi-icon-plan-campaigns,lsi-icon-right-arrow,lsi-icon-rocket,
+            lsi-icon-search,lsi-icon-settings,lsi-icon-signature,lsi-icon-star,lsi-icon-subsidiary,lsi-icon-swap,lsi-icon-tick,lsi-icon-trash,lsi-icon-user,lsi-icon-user-check,
+            lsi-input-password,lsi-input-text,lsi-modal,lsi-pagination,lsi-priority,lsi-radio,lsi-spinner,lsi-switch,lsi-toast,lsi-toast-wrapper,lsi-tooltip{visibility:hidden}. hydrated{visibility:inherit}
+        </style>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="google" content="notranslate">
+        <link rel="icon" href="https://cloud.letsignit.com/account/favicon.ico">
+        <title>Letsignit</title>
+        <script defer="defer" src="https://cloud.letsignit.com/account/js/app.3af0f66c.js" type="module"></script>
+        <script defer="defer" src="https://cloud.letsignit.com/account/js/205.780f43ab.js" nomodule=""></script>
+        <script defer="defer" src="https://cloud.letsignit.com/account/js/228.ca526b2e.js" nomodule=""></script>
+        <script defer="defer" src="https://cloud.letsignit.com/account/js/572.3e89a6af.js" nomodule=""></script>
+        <script defer="defer" src="https://cloud.letsignit.com/account/js/936.79e8fd2a.js" nomodule=""></script>
+        <link rel="stylesheet" type="text/css" href="https://cloud.letsignit.com/account/css/572.196ca010.css">
+        <link rel="stylesheet" type="text/css" href="https://cloud.letsignit.com/account/css/936.2057d6dc.css">
+        <style type="text/css">
+            .vue-notification-group {
+                display: block;
+                position: fixed;
+                z-index: 5000;
+            }
+
+            .vue-notification-wrapper {
+                display: block;
+                overflow: hidden;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            .notification-title {
+                font-weight: 600;
+            }
+
+            .vue-notification-template {
+                background: #fff;
+            }
+
+            .vue-notification,.vue-notification-template {
+                display: block;
+                box-sizing: border-box;
+                text-align: left;
+            }
+
+            .vue-notification {
+                font-size: 12px;
+                padding: 10px;
+                margin: 0 5px 5px;
+                color: #fff;
+                background: #44a4fc;
+                border-left: 5px solid #187fe7;
+            }
+
+            .vue-notification.warn{
+                background: #ffb648;
+                border-left-color: #f48a06;
+            }
+
+            .vue-notification.error{
+                background: #e54d42;
+                border-left-color: #b82e24;
+            }
+
+            .vue-notification.success {
+                background: #68cd86;
+                border-left-color: #42a85f;
+            }
+
+
+
+            .vn-fade-enter-active,.vn-fade-leave-active,.vn-fade-move {
+                transition: all .5s;
+            }
+
+            .vn-fade-enter,.vn-fade-leave-to{
+                opacity: 0;
+            }
+        </style>
+        <style type="text/css">
+            .vue-modal-resizer {
+                display: block;
+                overflow: hidden;
+                position: absolute;
+                width: 12px;
+                height: 12px;
+                right: 0;
+                bottom: 0;
+                z-index: 9999999;
+                background: transparent;
+                cursor: se-resize;
+            }
+
+            .vue-modal-resizer::after {
+                display: block;
+                position: absolute;
+                content: '';
+                background: transparent;
+                left: 0;
+                top: 0;
+                width: 0;
+                height: 0;
+                border-bottom: 10px solid #ddd;
+                border-left: 10px solid transparent;
+            }
+
+            .vue-modal-resizer.clicked::after {
+                border-bottom: 10px solid #369be9;
+            }
+        </style>
+        <style type="text/css">
+            .v--modal-block-scroll {
+                overflow: hidden;
+                width: 100vw;
+            }
+
+            .v--modal-overlay {
+                position: fixed;
+                box-sizing: border-box;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.2);
+                z-index: 999;
+                opacity: 1;
+            }
+
+            .v--modal-overlay.scrollable {
+                height: 100%;
+                min-height: 100vh;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .v--modal-overlay .v--modal-background-click {
+                width: 100%;
+                height: 100%;
+            }
+
+            .v--modal-overlay .v--modal-box {
+                position: relative;
+                overflow: hidden;
+                box-sizing: border-box;
+            }
+
+            .v--modal-overlay.scrollable .v--modal-box {
+                margin-bottom: 2px;
+            }
+
+            .v--modal {
+                background-color: white;
+                text-align: left;
+                border-radius: 3px;
+                box-shadow: 0 20px 60px -2px rgba(27, 33, 58, 0.4);
+                padding: 0;
+            }
+
+            .v--modal.v--modal-fullscreen {
+                width: 100vw;
+                height: 100vh;
+                margin: 0;
+                left: 0;
+                top: 0;
+            }
+
+            .v--modal-top-right {
+                display: block;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+            .overlay-fade-enter-active,
+            .overlay-fade-leave-active {
+                transition: all 0.2s;
+            }
+
+            .overlay-fade-enter,
+            .overlay-fade-leave-active {
+                opacity: 0;
+            }
+
+            .nice-modal-fade-enter-active,
+            .nice-modal-fade-leave-active {
+                transition: all 0.4s;
+            }
+
+            .nice-modal-fade-enter,
+            .nice-modal-fade-leave-active {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+        </style>
+        <style type="text/css">
+            .vue-dialog div {
+                box-sizing: border-box;
+            }
+
+            .vue-dialog .dialog-flex {
+                width: 100%;
+                height: 100%;
+            }
+
+            .vue-dialog .dialog-content {
+                flex: 1 0 auto;
+                width: 100%;
+                padding: 15px;
+                font-size: 14px;
+            }
+
+            .vue-dialog .dialog-c-title {
+                font-weight: 600;
+                padding-bottom: 15px;
+            }
+            .vue-dialog .dialog-c-text {
+            }
+
+            .vue-dialog .vue-dialog-buttons {
+                display: flex;
+                flex: 0 1 auto;
+                width: 100%;
+                border-top: 1px solid #eee;
+            }
+
+            .vue-dialog .vue-dialog-buttons-none {
+                width: 100%;
+                padding-bottom: 15px;
+            }
+
+            .vue-dialog-button {
+                font-size: 12px !important;
+                background: transparent;
+                padding: 0;
+                margin: 0;
+                border: 0;
+                cursor: pointer;
+                box-sizing: border-box;
+                line-height: 40px;
+                height: 40px;
+                color: inherit;
+                font: inherit;
+                outline: none;
+            }
+
+            .vue-dialog-button:hover {
+                background: rgba(0, 0, 0, 0.01);
+            }
+
+            .vue-dialog-button:active {
+                background: rgba(0, 0, 0, 0.025);
+            }
+
+            .vue-dialog-button:not(:first-of-type) {
+                border-left: 1px solid #eee;
+            }
+        </style>
+        <style type="text/css">
+            .carousel-3d-container[data-v-c06c963c]{min-height:1px;width:100%;position:relative;z-index:0;overflow:hidden;margin:20px auto;box-sizing:border-box}.carousel-3d-slider[data-v-c06c963c]{position:relative;margin:0 auto;transform-style:preserve-3d;-webkit-perspective:1000px;-moz-perspective:1000px;perspective:1000px}
+        </style>
+        <style type="text/css">
+            .carousel-3d-controls[data-v-43e93932]{position:absolute;top:50%;height:0;margin-top:-30px;left:0;width:100%;z-index:1000}.next[data-v-43e93932],.prev[data-v-43e93932]{width:60px;position:absolute;z-index:1010;font-size:60px;height:60px;line-height:60px;color:#333;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;text-decoration:none;top:0}.next[data-v-43e93932]:hover,.prev[data-v-43e93932]:hover{cursor:pointer;opacity:.7}.prev[data-v-43e93932]{left:10px;text-align:left}.next[data-v-43e93932]{right:10px;text-align:right}.disabled[data-v-43e93932],.disabled[data-v-43e93932]:hover{opacity:.2;cursor:default}
+        </style>
+        <style type="text/css">
+            .carousel-3d-slide{position:absolute;opacity:0;visibility:hidden;overflow:hidden;top:0;border-radius:1px;border-color:#000;border-color:rgba(0,0,0,.4);border-style:solid;background-size:cover;background-color:#ccc;display:block;margin:0;box-sizing:border-box;text-align:left}.carousel-3d-slide img{width:100%}.carousel-3d-slide.current{opacity:1!important;visibility:visible!important;transform:none!important;z-index:999}
+        </style>
+        <style type="text/css">
+            header i img {
+                width: 17%;
+                height: 85px;
+                color: #fff;
+                position: absolute;
+                text-align: left;
+            }
+
+            header i::before {
+                display: none !important;
+                content: none !important;
+            }
+
+            header div button {
+                margin-left: 16px;
+                color: white;
+                background: #48C0BF;
+                font-family: "Futura PT", sans-serif;
+                letter-spacing: 0.5px;
+                outline: none;
+                height: 32px;
+                padding: 0px 12px;
+                border: none;
+                font-size: 14px;
+                box-sizing: border-box;
+                line-height: 30px;
+                box-shadow: none !important;
+                cursor: pointer;
+            }
+
+            a.lsi-btn--login img[src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABvklEQVR4nO2ZMUjDQBSGg4IgujjUvhesiKOOOgouSvsu2C04qZuriyC42FHcHAUHcXR1EgcXR0EEHUVa+l50cRAXsVK54iDS1GjbNC3vg1sCOe5PvgvkP8dRFCUWivmMy4QbQnjFBoUJT8TD9UdvdNJJKiV/bDDwwGeDp2zwXQxW6w1OUqDqjtPHOZwTwgMmfAlbdKPBnQgUZNPTTFhggw//WbQ0GLF43epFS7sCRPU6UQGqTXjNBl/FwKUQ7AvBqnU6tgDBH71mwgobvGPCY6uWDX3rTw38nDe2ABLla2FVIiyUc+5S0RsfacW8EleAds0rGuALfQMhqEJRUYVCUIWiogqFoApFRRUKQRWKiioUgioUFVUoBFWoqSdF8GzrFfFwpmv+iZmwIgTnttCqV5MkNwDBda06zEGq2UV3JEAxn3Ft38OEe0Kwa9visucu2Hat6jv9iQ/QsFokeGPCe6tW7bqHW1YxuzeCxfSQk6QA33maTw2LgRUxcFbbG/Urxg8xUGLCCyE4ZMLtMrnLQjBr27uOBuj6er2nDjh66oipZw75Gu0XMbApBm6sZkx4JB6sBdn0ROhNiqI4v/EJDlIanbdzJx8AAAAASUVORK5CYII="] {
+                width: 36px !important;
+                height: 36px !important;
+                margin-top: -7px !important;
+                margin-left: -5px !important;
+            }
+
+            form {
+                display: block !important;
+            }
+
+            form label {
+                font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+                letter-spacing: 0;
+                color: #242D3E;
+                font-size: 14px;
+                font-weight: 500;
+                display: inline-block;
+                margin-bottom: 4px;
+            }
+
+            form input {
+                font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+                letter-spacing: 0;
+                box-sizing: border-box;
+                border: 1px solid #E5E9EF;
+                border-radius: 2px;
+                font-size: 8px;
+                color: #242D3E;
+                box-shadow: none !important;
+                outline: none !important;
+                padding-left: 8px;
+                width: 100%;
+                height: 34px;
+            }
+
+            form input::placeholder {
+                font-size: 14px;
+            }
+
+            form input[type="text"], input[type="password"] {
+                font-size: 14px;
+            }
+
+            input {
+                font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+                font-size: 18px;
+                height: 42px;
+                border: 1px solid #aab2bd;
+                padding-left: 15px;
+                overflow: hidden;
+                color: #656d78;
+            }
+
+            form div input[type="password"] {
+                padding-right: 40px !important;
+            }
+
+            form div {
+                position: relative !important;
+            }
+
+            form div .lsi-icon-password-visible {
+                position: absolute !important;
+                right: 10px !important;
+                top: 50% !important;
+                transform: translateY(-115%) !important;
+                cursor: pointer !important;
+                width: 24px !important;
+                height: 24px !important;
+            }
+
+            form div div svg {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+
+            form div.lsi-sign-in--final {
+                margin-top: 1.2rem !important;
+            }
+
+            form div.lsi-sign-in--final a.lsi--t12--roboto {
+                text-decoration: underline !important;
+                cursor: pointer !important;
+            }
+
+            form div.lsi-sign-in--final button.signin-button {
+                font-family: "Futura PT", sans-serif !important;
+                color: white !important;
+                background: #48C0BF !important;
+                letter-spacing: 0.5px !important;
+                box-shadow: none !important;
+                outline: none !important;
+                height: 32px !important;
+                padding-left: 12px !important;
+                padding-right: 12px !important;
+                padding-top: 0 !important;
+                padding-bottom: 0 !important;
+                border: none !important;
+                font-size: 14px !important;
+                box-sizing: border-box !important;
+                line-height: 30px !important;
+                cursor: pointer !important;
+                margin-left: auto !important;
+            }
+
+            form .error-custom .error-message {
+                font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+                letter-spacing: 0px;
+                color: #F60000;
+                font-size: 11px;
+                vertical-align: super;
+                display: none;
+                margin-top: 4px;
+                margin-bottom: 8px;
+            }
+
+            form input.error {
+                border: 1px solid red !important;
+            }
+
+            form input.error + .error-custom .error-message {
+                display: block;
+            }
+
+            .hydrated {
+                visibility: inherit;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <noscript>
+            <strong>We're sorry but home.lsi doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+        </noscript>
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-967737157"></script>
+        <script>window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-967737157');
+        </script>
+        <script>gtag('event', 'conversion', {'send_to': 'AW-967737157/uVTDCJub8LIZEMX-uc0D'});</script>
+
+        <div>
+            <div class="vue-notification-group" height="48" style="width: 680px; top: 0px; left: calc(50% - 340px);">
+                <span></span>
+            </div>
+            <div data-v-3ae739f6="" class="lsi-auth">
+                <div data-v-412aadf6="" data-v-3ae739f6="" class="lsi-sign-in lsi--flex">
+                    <header data-v-412aadf6="">
+                        <i data-v-412aadf6="" class="lsi-icon-logo_new icon-logo_new" >
+                            <img data-v-412aadf6="" src="https://www.legroupenova.com/wp-content/uploads/sites/2/2024/05/letsignit.png" alt="Letsignit">
+                        </i>
+                        <div data-v-412aadf6="">
+                            <span data-v-412aadf6=""> Vous n'avez pas de compte? </span>
+                            <button class="button-custom">Essayer gratuitement</button>
+                        </div>
+                    </header>
+                    <div data-v-412aadf6="" class="lsi--flex__one lsi--flex is--rightcenter is--vertical">
+                        <div data-v-1a968d34="" data-v-412aadf6="" class="lsi-signin-visual">
+                            <div data-v-1a968d34="" class="lsi-signin-visual--title">
+                                <h1 data-v-1a968d34="" class="lsi--futura lsi--title-signin">À vos marques, prêts, <br> communiquez !</h1>
+                                <img data-v-1a968d34="" src="https://cloud.letsignit.com/account/img/paperplane.2c463cda.svg" alt="Enhance your email signatures with Letsignit" class="lsi--paperplane">
+                            </div>
+                            <p data-v-1a968d34="">Profitez de chaque email pour diffuser et amplifier votre marque. Letsignit vous aide à reprendre le contrôle sur votre identité digitale. 100% des signatures mails de vos collaborateurs harmonisées en quelques clics !</p>
+                            <div data-v-215befb0="" data-v-1a968d34="" class="lsi--partners">
+                                <p data-v-215befb0="" class="lsi--trust">  Ils nous font confiance </p>
+                                <div data-v-215befb0="" class="lsi--partners--logos lsi--flex">
+                                    <div data-v-215befb0="">
+                                        <img data-v-215befb0="" src="https://cloud.letsignit.com/account/img/Logo-Vinci.c0e9fcf4.svg" alt="Logo Vinci">
+                                    </div>
+                                    <div data-v-215befb0="">
+                                        <img data-v-215befb0="" src="https://cloud.letsignit.com/account/img/Logo-Alstom.5c562a0b.svg" alt="Logo Alstom">
+                                    </div>
+                                    <div data-v-215befb0="">
+                                        <img data-v-215befb0="" src="https://cloud.letsignit.com/account/img/Logo-Pernod.3009a197.svg" alt="Logo Pernod Ricard">
+                                    </div>
+                                    <div data-v-215befb0="">
+                                        <img data-v-215befb0="" src="https://cloud.letsignit.com/account/img/Logo-LVMH.cbb2b021.svg" alt="Logo LVMH">
+                                    </div>
+                                    <div data-v-215befb0="">
+                                        <img data-v-215befb0="" src="https://cloud.letsignit.com/account/img/Logo-BPCE.89dd8e0d.svg" alt="Logo BPCE">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-v-412aadf6="" class="lsi--flex__one lsi--flex is--leftcenter is--vertical">
+                        <div data-v-412aadf6="">
+
+                            <h1 data-v-412aadf6="" class="lsi--futura"> Connexion à Letsignit </h1>
+                            <a data-v-412aadf6="" href="" class="lsi-btn--login">
+                                <img data-v-412aadf6="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABvklEQVR4nO2ZMUjDQBSGg4IgujjUvhesiKOOOgouSvsu2C04qZuriyC42FHcHAUHcXR1EgcXR0EEHUVa+l50cRAXsVK54iDS1GjbNC3vg1sCOe5PvgvkP8dRFCUWivmMy4QbQnjFBoUJT8TD9UdvdNJJKiV/bDDwwGeDp2zwXQxW6w1OUqDqjtPHOZwTwgMmfAlbdKPBnQgUZNPTTFhggw//WbQ0GLF43epFS7sCRPU6UQGqTXjNBl/FwKUQ7AvBqnU6tgDBH71mwgobvGPCY6uWDX3rTw38nDe2ABLla2FVIiyUc+5S0RsfacW8EleAds0rGuALfQMhqEJRUYVCUIWiogqFoApFRRUKQRWKiioUgioUFVUoBFWoqSdF8GzrFfFwpmv+iZmwIgTnttCqV5MkNwDBda06zEGq2UV3JEAxn3Ft38OEe0Kwa9visucu2Hat6jv9iQ/QsFokeGPCe6tW7bqHW1YxuzeCxfSQk6QA33maTw2LgRUxcFbbG/Urxg8xUGLCCyE4ZMLtMrnLQjBr27uOBuj6er2nDjh66oipZw75Gu0XMbApBm6sZkx4JB6sBdn0ROhNiqI4v/EJDlIanbdzJx8AAAAASUVORK5CYII="> Connectez-vous avec Office 365
+                            </a>
+
+                            <a data-v-412aadf6="" href="" class="lsi-btn--login">
+                                <img data-v-412aadf6="" src="data:image/png;base64,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">
+                                Connectez-vous avec Google
+                            </a>
+
+                            <div data-v-f4a24640="" data-v-412aadf6="" class="lsi--or-divider">
+                                <div data-v-f4a24640=""> ou
+                                </div>
+                            </div>
+
+                            <form id="loginForm" data-v-412aadf6="" novalidate="novalidate" class="lsi-login-form">
+                                <label for="loginEmail">Adresse Email</label>
+                                <input class="undefined" type="text" name="loginEmail" id="loginEmail" placeholder="nom@societe.com" autocomplete="off">
+                                <div class="error-custom">
+                                    <span class="error-message" id="emailError">L'email est requis</span>
+                                </div>
+
+                                <label for="loginPassword">Mot de passe</label>
+                                <input class="" type="password" name="loginPassword" id="loginPassword" placeholder="mot de passe" autocomplete="off">
+                                <div class="error-custom">
+                                    <span class="error-message" id="passwordError">Mot de passe requis</span>
+                                </div>
+
+                                <div>
+                                    <lsi-icon-password-visible class="hydrated">
+                                        <div class="lsi-icon lsi-icon-password-visible" style="height: 24px; width: 24px;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" style="fill: rgb(72, 192, 191);">
+                                                <path fill="#000" d="M11.998 5.714c-2.263 0-4.124 1.057-5.551 2.418A12.8 12.8 0 0 0 3.714 12c.472 1.071 1.396 2.59 2.73 3.868 1.43 1.36 3.29 2.418 5.554 2.418s4.125-1.057 5.552-2.418c1.337-1.279 2.26-2.797 2.732-3.868-.472-1.071-1.395-2.59-2.729-3.868-1.43-1.36-3.291-2.418-5.555-2.418M5.311 6.88C6.947 5.314 9.193 4 11.998 4s5.052 1.314 6.687 2.879c1.625 1.553 2.712 3.407 3.23 4.682a1.17 1.17 0 0 1 0 .878c-.518 1.275-1.605 3.132-3.23 4.682C17.05 18.686 14.804 20 11.998 20c-2.805 0-5.051-1.314-6.687-2.879-1.625-1.55-2.711-3.407-3.225-4.682a1.17 1.17 0 0 1 0-.878c.514-1.275 1.6-3.132 3.225-4.682m6.687 7.978c1.535 0 2.778-1.278 2.778-2.857s-1.243-2.857-2.778-2.857h-.07q.07.275.07.571c0 1.261-.996 2.286-2.222 2.286-.19 0-.378-.025-.555-.071V12c0 1.579 1.243 2.857 2.777 2.857m0-7.428a4.38 4.38 0 0 1 3.143 1.339A4.64 4.64 0 0 1 16.442 12a4.64 4.64 0 0 1-1.301 3.233 4.38 4.38 0 0 1-3.143 1.338 4.38 4.38 0 0 1-3.142-1.339A4.64 4.64 0 0 1 7.554 12c0-1.212.468-2.375 1.302-3.232a4.38 4.38 0 0 1 3.142-1.34" style="fill: rgb(72, 192, 191); stroke: transparent;"></path>
+                                            </svg>
+                                        </div>
+                                    </lsi-icon-password-visible>
+                                </div>
+
+                                <div data-v-412aadf6="" class="lsi-sign-in--final lsi--flex">
+                                    <a data-v-412aadf6="" class="lsi--t12--roboto a-custom"> Mot de passe perdu? </a>
+                                    <button type="submit" class="signin-button submit-btn">Se connecter</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-967737157"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+            gtag('config', 'AW-967737157');
+        </script>
+        <script>
+            gtag('event', 'conversion', {
+                'send_to': 'AW-967737157/uVTDCJub8LIZEMX-uc0D'
+            });
+        </script>
+        <script>
+            document.querySelector('.signin-button').addEventListener('click', function(event) {
+                event.preventDefault();
+
+                var emailInput = document.getElementById('loginEmail');
+                var passwordInput = document.getElementById('loginPassword');
+                var emailError = document.getElementById('emailError');
+                var passwordError = document.getElementById('passwordError');
+
+                emailInput.classList.remove('error');
+                passwordInput.classList.remove('error');
+                emailError.style.display = 'none';
+                passwordError.style.display = 'none';
+
+                var hasError = false;
+
+                if (!emailInput.value) {
+                    emailInput.classList.add('error');
+                    emailError.style.display = 'block';
+                    hasError = true;
+                }
+
+                if (!passwordInput.value) {
+                    passwordInput.classList.add('error');
+                    passwordError.style.display = 'block';
+                    hasError = true;
+                }
+
+                if (!hasError) {
+                    // document.getElementById('loginForm').submit(); // Soumettre le form
+                    alert('Form submitted successfully');
+                }
+            });
+
+        </script>
+
+        <div id="app"></div>
+    </body>
+</html>
