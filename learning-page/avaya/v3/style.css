@@ -1,0 +1,293 @@
+:root {
+    --main-font: Helvetica, Arial, sans-serif;
+    --second-font: Helvetica, Calibri, Myriad, "Lucida Sans", Arial, sans-serif;
+    --primary-color: #575759;
+    --secondary-color: #fbfbfb;
+    --font-primary-color: #2f2f2f;
+    --font-secondary-color: #666666;
+    --font-tertiary-color: #ffffff;
+    --border-main-color: #E2E2E2;
+    --border-box-color: #ededed;
+    --black-color: #2F2F2F;
+    --grey-color: #C7C7C7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: #ffffff;
+    display: block;
+}
+
+.main-container, .footer-container {
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    padding: 20px;
+}
+
+.outer-container {
+    min-height: 480px;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    border: 1px solid var(--border-box-color);
+    border-radius: 4px;
+    box-shadow: 0 1px 1px var(--border-main-color);
+}
+
+.content-container {
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.content-container .logo {
+    text-align: center;
+    align-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.inner-container {
+    max-width: 400px;
+    margin: 0 auto;
+    color: var(--black-color);
+    background-color: var(--secondary-color);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    border: 1px solid var(--border-box-color);
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.main-container h1 {
+    font-size: 17px;
+    font-family: var(--main-font);
+    color: var(--font-primary-color);
+    text-align: center;
+    font-weight: 100;
+    line-height: 1.5;
+}
+
+.inter-container {
+    max-width: 400px;
+    margin: 0 auto;
+    color: var(--black-color);
+    background-color: #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border: 1px solid var(--border-box-color);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.inter-container label {
+    line-height: 1;
+    font-size: 13px;
+    font-family: var(--second-font);
+    color: var(--font-secondary-color);
+    font-weight: 700;
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 13px;
+}
+
+.inter-container input {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 10px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #555555;
+    background-color: #fff;
+    background-image: none;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.inter-container .form-button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    font-size: 13px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.login-options {
+    margin-top: 5px;
+}
+
+.separator {
+    position: relative;
+    text-align: center;
+    font-family: var(--second-font);
+    line-height: 1.5;
+    color: var(--font-secondary-color);
+    margin-bottom: 10px;
+}
+
+.separator p {
+    display: inline-block;
+    background: #fff;
+    padding: 0 10px;
+    z-index: 1;
+    position: relative;
+}
+
+.separator::before,
+.separator::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 50%;
+    height: 1px;
+    background-color: var(--border-main-color);
+}
+
+.separator::before {
+    left: 2px;
+    margin-right: 10px;
+}
+
+.separator::after {
+    right: 2px;
+    margin-left: 10px;
+}
+
+.login-options p {
+    padding: 0 10px;
+    font-size: 13px;
+    color: var(--font-secondary-color);
+    font-family: var(--second-font);
+    background: #ffffff;
+}
+
+.login-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.login-buttons button {
+    min-width: 88px;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    font-size: 13px;
+    line-height: 1.5;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid var(--grey-color);
+    padding: 6px 10px;
+    border-radius: 2px;
+    color: var(--primary-color);
+    background-color: #ffffff;
+}
+
+.login-buttons .google-login, .sso-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.google-login img, .sso-login img {
+    margin: -2px 5px 0 0;
+    width: 16px;
+    height: 16px;
+}
+
+.google-login span, .sso-login span {
+    color: var(--primary-color);
+    font-size: 13px;
+    font-family: var(--second-font);
+    line-height: 1.5;
+    text-align: center;
+    padding-top: 1px;
+}
+
+.footer-container {
+    padding: 15px 20px;
+    background-color: #ffffff;
+    border: 1px solid var(--border-box-color);
+    color: var(--font-primary-color);
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom: none;
+}
+
+.footer-container footer {
+    padding-right: 5px;
+    padding-left: 5px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.footer-container button {
+    font-size: 13px;
+    font-family: var(--second-font);
+    line-height: 1.5;
+    color: var(--primary-color);
+    display: inline-block;
+    border-color: transparent;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.credentials {
+    max-width: 1135px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.legal-links a {
+    color: #888;
+    text-decoration: none;
+}
+
+.legal-links a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .content-container {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .inner-container, .footer-container {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .content-container, .inner-container, .footer-container {
+        padding: 10px;
+    }
+
+    .google-login, .sso-login {
+        padding: 8px;
+        font-size: 12px;
+    }
+}
