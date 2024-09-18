@@ -1,28 +1,30 @@
 # Landing Pages Reproduction
 
 ## Description
-Ce projet est une collection de reproductions fidèles de pages de connexion provenant de divers sites web populaires. Chaque page a été recréée minutieusement pour imiter à la perfection les interfaces utilisateur des authentiques sites web, incluant les champs de connexion pour l'email, le numéro de téléphone, et les mots de passe, ainsi que les fonctionnalités associées comme l'affichage ou la masquage des mots de passe.
+This project is a collection of faithful reproductions of landing pages from various popular websites. Each page has been painstakingly recreated to perfectly mimic the user interfaces of authentic websites, including login fields for email, phone number, and passwords, as well as associated functionality such as displaying or hiding passwords.
 
-**Objectif principal** : Ces reproductions ont été développées dans un cadre professionnel pour tester la vigilance des utilisateurs lors de simulations de phishing, dans le but d'améliorer la sécurité au sein des entreprises.
-
-
-## Avertissement
-**Important :** Ce projet a été conçu exclusivement pour des audits de sécurité et des simulations de phishing dans un cadre professionnel et éducatif. Son objectif est de sensibiliser les utilisateurs aux dangers des fausses pages de connexion et d'améliorer leur capacité à détecter ces tentatives d'attaques. Toute utilisation à des fins illégales ou malveillantes est strictement interdite. Je décline toute responsabilité pour l'usage de ce projet en dehors des objectifs mentionnés.
+**Main objective**: These reproductions have been developed in a professional context to test user vigilance during phishing simulations, with the aim of improving security within companies.
 
 
-En travaillant avec ces pages, vous vous engagez à respecter les lois et règlements en vigueur relatifs à la cybersécurité et à la protection des données.
+## Warning
+**Important:** This project has been designed exclusively for security audits and phishing simulations in a professional and educational context. Its aim is to make users aware of the dangers of fake login pages and to improve their ability to detect these attempted attacks. Any use for illegal or malicious purposes is strictly prohibited. I accept no responsibility for the use of this project for purposes other than those mentioned.
+
+
+By working with these pages, you undertake to comply with the laws and regulations in force relating to cybersecurity and data protection.
 
 
 ## Installation
-1. Clonez le dépôt sur votre machine :
-   ```bash
+1. Clone the repository on your machine:
+   ``bash
    git clone https://github.com/Sushitsu/landing-pages.git
    ```
 
-2. Ouvrez les fichiers dans votre navigateur ou éditeur de code préféré pour explorer les reproductions des pages de connexion.
+2. Open the files in your favourite browser or code editor to explore the reproductions of the connection pages.
 
 
-## Technologies utilisées
-- HTML5 pour la structure des pages
-- CSS3 pour la mise en page et le style
-- JavaScript pour les interactions utilisateur
+## Technologies used
+- HTML5 for page structure
+- CSS3 for layout and style
+- JavaScript for user interaction
+
+<p align=‘right’><a href=‘#Landing Pages Reproduction’>Back to top ⬆️</a></p>
