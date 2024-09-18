@@ -15,7 +15,7 @@ By working with these pages, you undertake to comply with the laws and regulatio
 
 ## Installation
 1. Clone the repository on your machine:
-   ``bash
+   ```bash
    git clone https://github.com/Sushitsu/landing-pages.git
    ```
 
