@@ -9,7 +9,7 @@ This project is a collection of faithful reproductions of landing pages from var
 **Main objective** : These reproductions have been developed in a professional context to test user vigilance during phishing simulations, with the aim of improving security within companies.
 
 
-## > [!WARNING] 
+## :warning: Warning
 **Important :** This project has been designed exclusively for security audits and phishing simulations in a professional and educational context. Its aim is to make users aware of the dangers of fake login pages and to improve their ability to detect these attempted attacks. Any use for illegal or malicious purposes is strictly prohibited. I accept no responsibility for the use of this project for purposes other than those mentioned.
 
 
