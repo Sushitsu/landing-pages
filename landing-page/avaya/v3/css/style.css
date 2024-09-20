@@ -47,7 +47,6 @@ body {
     margin: 0 auto;
     overflow: hidden;
     padding: 20px;
-    min-height: 475px;
 }
 
 .content-container .logo {
@@ -118,6 +117,16 @@ body {
     margin-bottom: 20px;
 }
 
+.input-group {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
 .inter-container .form-button {
     width: 100%;
     padding: 10px;
@@ -133,6 +142,63 @@ body {
 
 .form-button:hover {
     background-color: #484849;
+}
+
+.form-button {
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-button:hover {
+    background-color: #4A4A4B;
+}
+
+.password-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.password-container input {
+    width: 80%;
+}
+
+.password-container .toggle-password {
+    width: 20%;
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.hidden {
+    display: none;
+}
+
+#action-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 12px;
+    color: #007bff;
 }
 
 .login-options {
@@ -187,7 +253,7 @@ body {
 .login-buttons {
     display: flex;
     justify-content: center;
-    margin-top: 15px;
+    gap: 10px;
 }
 
 .login-buttons button {
@@ -270,8 +336,9 @@ body {
 }
 
 .credentials {
-    max-width: 1200px;
+    max-width: 1135px;
     margin: 0 auto;
+    padding: 20px 0;
 }
 
 .legal-links a {
