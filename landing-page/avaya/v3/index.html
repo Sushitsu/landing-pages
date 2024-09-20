@@ -131,22 +131,22 @@
             margin-bottom: 20px;
         }
 
-        .inter-container .form-button {
-            width: 100%;
-            padding: 10px;
-            background-color: var(--primary-color);
-            color: #fff;
-            border: none;
-            border-radius: 2px;
-            font-size: 13px;
-            cursor: pointer;
-            margin-bottom: 10px;
-            display: inline-block;
-        }
+        /*.inter-container .form-button {*/
+        /*    width: 100%;*/
+        /*    padding: 10px;*/
+        /*    background-color: var(--primary-color);*/
+        /*    color: #fff;*/
+        /*    border: none;*/
+        /*    border-radius: 2px;*/
+        /*    font-size: 13px;*/
+        /*    cursor: pointer;*/
+        /*    margin-bottom: 10px;*/
+        /*    display: inline-block;*/
+        /*}*/
 
-        .form-button:hover {
-            background-color: #484849;
-        }
+        /*.form-button:hover {*/
+        /*    background-color: #484849;*/
+        /*}*/
 
         .login-options {
             margin-top: 5px;
@@ -200,6 +200,7 @@
         .login-buttons {
             display: flex;
             justify-content: center;
+            gap: 10px;
         }
 
         .login-buttons button {
@@ -282,8 +283,9 @@
         }
 
         .credentials {
-            max-width: 1200px;
+            max-width: 1135px;
             margin: 0 auto;
+            padding: 20px 0;
         }
 
         .legal-links a {
@@ -453,11 +455,28 @@
                 </div>
                 <div class="inter-container">
                     <form id="form-login">
-                        <label class="text"  data-key="adress">Adresse e-mail ou numéro de téléphone</label>
-                        <input class="input-group" type="text" id="email">
-                        <p class="error-message" data-key="error">Saisissez une adresse e-mail ou un numéro de téléphone.</p>
-                        <button class="form-button" data-key="next"  type="submit">Suivant</button>
+                        <div id="email-section">
+                            <label class="text">Adresse e-mail</label>
+                            <input class="input-group" type="text" id="email" required>
+                            <p class="error-message" id="email-error" style="display:none;">Saisissez une adresse e-mail.</p>
+                        </div>
+
+                        <div id="password-section" class="hidden">
+                            <label class="text">Mot de passe</label>
+                            <div class="input-group">
+                                <input type="password" id="password" required>
+                                <span class="toggle-password">Voir</span>
+                            </div>
+                            <p class="error-message" id="password-error" style="display:none;">Saisissez un mot de passe.</p>
+                        </div>
+
+                        <div id="action-buttons">
+                            <button class="form-button" id="next-btn" type="button">Suivant</button>
+                            <button class="form-button hidden" id="back-btn" type="button">Retour</button>
+                            <button class="form-button hidden" id="login-btn" type="submit">Connexion</button>
+                        </div>
                     </form>
+
                     <div class="login-options">
                         <div class="separator">
                             <p class="login-text" data-key="login">Ou connectez-vous avec</p>
@@ -480,7 +499,10 @@
                     <a class="footer-element" data-key="element" href="">
                         <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                              width="73.000000pt" height="84.000000pt" viewBox="0 0 73.000000 84.000000"
-                             preserveAspectRatio="xMidYMid meet" style="width:30px;height:15px;position:relative;top:3px;">
+                             preserveAspectRatio="xMidYMid meet" style="width:30px;height:15px;color:#575759;position:relative;top:3px;">
+                            <metadata>
+                                Created by potrace 1.10, written by Peter Selinger 2001-2011
+                            </metadata>
                             <g transform="translate(0.000000,84.000000) scale(0.100000,-0.100000)"
                                fill="#575759" stroke="none">
                                 <path d="M72 758 c-9 -9 -12 -65 -12 -198 0 -224 9 -265 75 -338 51 -56 192
@@ -532,44 +554,48 @@
 <p class="translatable" data-key="description">This is a description in English (Australia).</p> -->
 </body>
 <script type="application/javascript">
-
-
     document.addEventListener('DOMContentLoaded', function () {
-        document.getElementById('form-login').addEventListener('submit', function (event) {
-            event.preventDefault(); // Empêche la soumission du formulaire
+        // Validation sur clic du bouton "Suivant"
+        document.getElementById('next-btn').addEventListener('click', function () {
+            validateForm();
+        });
 
-            // Sélectionner le champ email par son nom ou son ID
+        // Validation quand on soumet le formulaire (par ex. touche Entrée)
+        document.getElementById('form-login').addEventListener('submit', function (event) {
+            event.preventDefault();
+            validateForm();
+        });
+
+        // Fonction de validation
+        function validateForm() {
             let email = document.getElementById('email').value;
             let emailValid = isValidEmail(email);
-            let errorMessage = document.querySelector('.error-message');
-            let text = document.querySelector('.text')
-            let input = this.querySelector('.input-group')
+            let errorMessage = document.getElementById('email-error');
+            let text = document.querySelector('#email-section .text');
+            let input = document.getElementById('email');
 
+            // Vérifier si l'email ou téléphone est valide
             if (!emailValid) {
-                errorMessage.style.display = 'flex'; // Affiche le message d'erreur pour l'email
+                errorMessage.style.display = 'block';
                 text.style.color = "rgb(227, 30, 30)";
                 input.style.boxShadow = "0 0 8px rgb(227, 30, 30)";
+                input.style.border = "1px solid rgb(227, 30, 30)";
             } else {
-                errorMessage.style.display = 'none'; // Cache le message d'erreur pour l'email
+                errorMessage.style.display = 'none';
+                text.style.color = "";
+                input.style.boxShadow = "";
+                input.style.border = "";
+                // Ici, tu peux envoyer le formulaire ou faire une redirection
+                document.getElementById('form-login').submit();  // Cette ligne envoie le formulaire
             }
-            if (emailValid) {
-                // Soumettre le formulaire ou effectuer une autre action ici
+        }
 
-                document.getElementById('form-login').submit();
-            } else {
-
-            }
-        });
+        // Fonction de validation de l'email (exemple simple)
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
     });
-
-    // Fonction de validation de l'email
-    function isValidEmail(email) {
-        // Regex simple pour valider les emails
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailPattern.test(email);
-    }
-
-
 
     document.addEventListener('DOMContentLoaded', () => {
         const languageSelect = document.getElementById('language-select');
@@ -776,6 +802,62 @@
             const selectedLang = event.target.value; // Obtenir la langue sélectionnée
             translatePage(selectedLang); // Traduire la page en fonction de la langue
         });
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const formLogin = document.getElementById('form-login');
+        const emailSection = document.getElementById('email-section');
+        const passwordSection = document.getElementById('password-section');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const nextBtn = document.getElementById('next-btn');
+        const backBtn = document.getElementById('back-btn');
+        const submitBtn = document.getElementById('submit-btn');
+        const emailError = document.getElementById('email-error');
+        const passwordError = document.getElementById('password-error');
+
+        // Fonction pour basculer l'affichage du mot de passe
+        document.querySelector('.toggle-password').addEventListener('click', function () {
+            const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordInput.setAttribute('type', type);
+            this.textContent = type === 'password' ? 'Voir' : 'Cacher';
+        });
+
+        // Lorsqu'on clique sur "Suivant"
+        nextBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const email = emailInput.value.trim();
+            if (email === "" || !isValidEmail(email)) {
+                emailError.style.display = 'block';
+            } else {
+                emailError.style.display = 'none';
+                // Montrer la section du mot de passe
+                emailSection.classList.add('hidden');
+                passwordSection.classList.remove('hidden');
+                backBtn.classList.remove('hidden');
+                nextBtn.classList.add('hidden');
+                submitBtn.classList.remove('hidden');
+            }
+        });
+
+        // Lorsqu'on clique sur "Retour"
+        backBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            // Cacher la section du mot de passe et revenir à l'état initial
+            passwordSection.classList.add('hidden');
+            emailSection.classList.remove('hidden');
+            backBtn.classList.add('hidden');
+            nextBtn.classList.remove('hidden');
+            submitBtn.classList.add('hidden');
+        });
+
+        // Validation de l'email
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
     });
 </script>
 </html>
