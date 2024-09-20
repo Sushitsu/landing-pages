@@ -11,436 +11,432 @@
     <title>Sign In</title>
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
 
-    <style type="text/css">
-        :root {
-            --main-font: Helvetica, Arial, sans-serif;
-            --second-font: Helvetica, Calibri, Myriad, "Lucida Sans", Arial, sans-serif;
-            --primary-color: #575759;
-            --secondary-color: #fbfbfb;
-            --font-primary-color: #2f2f2f;
-            --font-secondary-color: #666666;
-            --font-tertiary-color: #ffffff;
-            --border-main-color: #E2E2E2;
-            --border-box-color: #ededed;
-            --black-color: #2F2F2F;
-            --grey-color: #C7C7C7;
-        }
+<!--    <style type="text/css">-->
+<!--        :root {-->
+<!--            &#45;&#45;main-font: Helvetica, Arial, sans-serif;-->
+<!--            &#45;&#45;second-font: Helvetica, Calibri, Myriad, "Lucida Sans", Arial, sans-serif;-->
+<!--            &#45;&#45;primary-color: #575759;-->
+<!--            &#45;&#45;secondary-color: #fbfbfb;-->
+<!--            &#45;&#45;font-primary-color: #2f2f2f;-->
+<!--            &#45;&#45;font-secondary-color: #666666;-->
+<!--            &#45;&#45;font-tertiary-color: #ffffff;-->
+<!--            &#45;&#45;border-main-color: #E2E2E2;-->
+<!--            &#45;&#45;border-box-color: #ededed;-->
+<!--            &#45;&#45;black-color: #2F2F2F;-->
+<!--            &#45;&#45;grey-color: #C7C7C7;-->
+<!--        }-->
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<!--        * {-->
+<!--            margin: 0;-->
+<!--            padding: 0;-->
+<!--            box-sizing: border-box;-->
+<!--        }-->
 
-        body {
-            padding: 0;
-            margin: 0;
-            background: #ffffff;
-            display: block;
-        }
+<!--        body {-->
+<!--            padding: 0;-->
+<!--            margin: 0;-->
+<!--            background: #ffffff;-->
+<!--            display: block;-->
+<!--        }-->
 
-        .main-container, .footer-container {
-            max-width: 1240px;
-            width: 100%;
-            margin: 0 auto;
-            position: relative;
-            padding: 20px;
-        }
+<!--        .main-container, .footer-container {-->
+<!--            max-width: 1240px;-->
+<!--            width: 100%;-->
+<!--            margin: 0 auto;-->
+<!--            position: relative;-->
+<!--            padding: 20px;-->
+<!--        }-->
 
-        .outer-container {
-            min-height: 480px;
-            margin-bottom: 20px;
-            background-color: #ffffff;
-            border: 1px solid var(--border-box-color);
-            border-radius: 4px;
-            box-shadow: 0 1px 1px var(--border-main-color);
-        }
+<!--        .outer-container {-->
+<!--            min-height: 480px;-->
+<!--            margin-bottom: 20px;-->
+<!--            background-color: #ffffff;-->
+<!--            border: 1px solid var(&#45;&#45;border-box-color);-->
+<!--            border-radius: 4px;-->
+<!--            box-shadow: 0 1px 1px var(&#45;&#45;border-main-color);-->
+<!--        }-->
 
-        .content-container {
-            max-width: 800px;
-            margin: 0 auto;
-            overflow: hidden;
-            padding: 20px;
-        }
+<!--        .content-container {-->
+<!--            max-width: 800px;-->
+<!--            min-height: 475px;-->
+<!--            margin: 0 auto;-->
+<!--            overflow: hidden;-->
+<!--            padding: 20px;-->
+<!--        }-->
 
-        .content-container .logo {
-            text-align: center;
-            align-content: center;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
+<!--        .content-container .logo {-->
+<!--            text-align: center;-->
+<!--            align-content: center;-->
+<!--            margin-top: 20px;-->
+<!--            margin-bottom: 20px;-->
+<!--        }-->
 
-        .inner-container {
-            max-width: 400px;
-            margin: 0 auto;
-            color: var(--black-color);
-            background-color: var(--secondary-color);
-            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            text-align: center;
-            border: 1px solid var(--border-box-color);
-            border-bottom: 1px solid transparent;
-            border-top-left-radius: 3px;
-            border-top-right-radius: 3px;
-        }
+<!--        .inner-container {-->
+<!--            max-width: 400px;-->
+<!--            margin: 0 auto;-->
+<!--            color: var(&#45;&#45;black-color);-->
+<!--            background-color: var(&#45;&#45;secondary-color);-->
+<!--            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);-->
+<!--            padding: 20px;-->
+<!--            text-align: center;-->
+<!--            border: 1px solid var(&#45;&#45;border-box-color);-->
+<!--            border-bottom: 1px solid transparent;-->
+<!--            border-top-left-radius: 3px;-->
+<!--            border-top-right-radius: 3px;-->
+<!--        }-->
 
-        .main-container h1 {
-            font-size: 17px;
-            font-family: var(--main-font);
-            color: var(--font-primary-color);
-            text-align: center;
-            font-weight: 100;
-            line-height: 1.5;
-        }
+<!--        .main-container h1 {-->
+<!--            font-size: 17px;-->
+<!--            font-family: var(&#45;&#45;main-font);-->
+<!--            color: var(&#45;&#45;font-primary-color);-->
+<!--            text-align: center;-->
+<!--            font-weight: 100;-->
+<!--            line-height: 1.5;-->
+<!--        }-->
 
-        .inter-container {
-            max-width: 400px;
-            margin: 0 auto;
-            color: var(--black-color);
-            background-color: #fff;
-            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            border: 1px solid var(--border-box-color);
-            border-top-left-radius: 3px;
-            border-top-right-radius: 3px;
-        }
+<!--        .inter-container {-->
+<!--            max-width: 400px;-->
+<!--            margin: 0 auto;-->
+<!--            color: var(&#45;&#45;black-color);-->
+<!--            background-color: #fff;-->
+<!--            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);-->
+<!--            padding: 20px;-->
+<!--            border: 1px solid var(&#45;&#45;border-box-color);-->
+<!--            border-top-left-radius: 3px;-->
+<!--            border-top-right-radius: 3px;-->
+<!--        }-->
 
-        .inter-container label {
-            line-height: 1;
-            font-size: 13px;
-            font-family: var(--second-font);
-            color: var(--font-secondary-color);
-            font-weight: 700;
-            display: inline-block;
-            max-width: 100%;
-            margin-bottom: 13px;
-        }
+<!--        .inter-container label {-->
+<!--            line-height: 1;-->
+<!--            font-size: 13px;-->
+<!--            font-family: var(&#45;&#45;second-font);-->
+<!--            color: var(&#45;&#45;font-secondary-color);-->
+<!--            font-weight: 700;-->
+<!--            display: inline-block;-->
+<!--            max-width: 100%;-->
+<!--            margin-bottom: 13px;-->
+<!--        }-->
 
-        .inter-container input {
-            display: block;
-            width: 100%;
-            height: 34px;
-            padding: 6px 10px;
-            font-size: 13px;
-            line-height: 1.5;
-            color: #555555;
-            background-color: #fff;
-            background-image: none;
-            border-radius: 2px;
-            border: 1px solid #ccc;
-            margin-bottom: 20px;
-        }
+<!--        .inter-container input {-->
+<!--            display: block;-->
+<!--            width: 100%;-->
+<!--            height: 34px;-->
+<!--            padding: 6px 10px;-->
+<!--            font-size: 13px;-->
+<!--            line-height: 1.5;-->
+<!--            color: #555555;-->
+<!--            background-color: #fff;-->
+<!--            background-image: none;-->
+<!--            border-radius: 2px;-->
+<!--            border: 1px solid #ccc;-->
+<!--            margin-bottom: 20px;-->
+<!--            margin-top: 0;-->
+<!--        }-->
 
-        /*.inter-container .form-button {*/
-        /*    width: 100%;*/
-        /*    padding: 10px;*/
-        /*    background-color: var(--primary-color);*/
-        /*    color: #fff;*/
-        /*    border: none;*/
-        /*    border-radius: 2px;*/
-        /*    font-size: 13px;*/
-        /*    cursor: pointer;*/
-        /*    margin-bottom: 10px;*/
-        /*    display: inline-block;*/
-        /*}*/
+<!--        /*.inter-container .form-button {*/-->
+<!--        /*    width: 100%;*/-->
+<!--        /*    padding: 10px;*/-->
+<!--        /*    background-color: var(&#45;&#45;primary-color);*/-->
+<!--        /*    color: #fff;*/-->
+<!--        /*    border: none;*/-->
+<!--        /*    border-radius: 2px;*/-->
+<!--        /*    font-size: 13px;*/-->
+<!--        /*    cursor: pointer;*/-->
+<!--        /*    margin-bottom: 10px;*/-->
+<!--        /*    display: inline-block;*/-->
+<!--        /*}*/-->
 
-        /*.form-button:hover {*/
-        /*    background-color: #484849;*/
-        /*}*/
+<!--        /*.form-button:hover {*/-->
+<!--        /*    background-color: #484849;*/-->
+<!--        /*}*/-->
 
-        .login-options {
-            margin-top: 5px;
-        }
+<!--        .login-options {-->
+<!--            margin-top: 5px;-->
+<!--        }-->
 
-        .separator {
-            position: relative;
-            text-align: center;
-            font-family: var(--second-font);
-            line-height: 1.5;
-            color: var(--font-secondary-color);
-            margin-bottom: 10px;
-        }
+<!--        .separator {-->
+<!--            position: relative;-->
+<!--            text-align: center;-->
+<!--            font-family: var(&#45;&#45;second-font);-->
+<!--            line-height: 1.5;-->
+<!--            color: var(&#45;&#45;font-secondary-color);-->
+<!--            margin-bottom: 10px;-->
+<!--        }-->
 
-        .separator p {
-            display: inline-block;
-            background: #fff;
-            padding: 0 10px;
-            z-index: 1;
-            position: relative;
-        }
+<!--        .separator p {-->
+<!--            display: inline-block;-->
+<!--            background: #fff;-->
+<!--            padding: 0 10px;-->
+<!--            z-index: 1;-->
+<!--            position: relative;-->
+<!--        }-->
 
-        .separator::before,
-        .separator::after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            width: 50%;
-            height: 1px;
-            background-color: var(--border-main-color);
-        }
+<!--        .separator::before,-->
+<!--        .separator::after {-->
+<!--            content: "";-->
+<!--            position: absolute;-->
+<!--            top: 50%;-->
+<!--            width: 50%;-->
+<!--            height: 1px;-->
+<!--            background-color: var(&#45;&#45;border-main-color);-->
+<!--        }-->
 
-        .separator::before {
-            left: 2px;
-            margin-right: 10px;
-        }
+<!--        .separator::before {-->
+<!--            left: 2px;-->
+<!--            margin-right: 10px;-->
+<!--        }-->
 
-        .separator::after {
-            right: 2px;
-            margin-left: 10px;
-        }
+<!--        .separator::after {-->
+<!--            right: 2px;-->
+<!--            margin-left: 10px;-->
+<!--        }-->
 
-        .login-options p {
-            padding: 0 10px;
-            font-size: 13px;
-            color: var(--font-secondary-color);
-            font-family: var(--second-font);
-            background: #ffffff;
-        }
+<!--        .login-options p {-->
+<!--            padding: 0 10px;-->
+<!--            font-size: 13px;-->
+<!--            color: var(&#45;&#45;font-secondary-color);-->
+<!--            font-family: var(&#45;&#45;second-font);-->
+<!--            background: #ffffff;-->
+<!--        }-->
 
-        .login-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
+<!--        .login-buttons {-->
+<!--            display: flex;-->
+<!--            justify-content: center;-->
+<!--            margin-top: 20px;-->
+<!--        }-->
 
-        .login-buttons button {
-            min-width: 88px;
-            margin-right: 10px;
-            margin-bottom: 5px;
-            font-size: 13px;
-            line-height: 1.5;
-            font-weight: normal;
-            text-align: center;
-            white-space: nowrap;
-            vertical-align: middle;
-            touch-action: manipulation;
-            cursor: pointer;
-            background-image: none;
-            border: 1px solid var(--grey-color);
-            padding: 6px 10px;
-            border-radius: 2px;
-            color: var(--primary-color);
-            background-color: #ffffff;
-        }
+<!--        .login-buttons button {-->
+<!--            min-width: 88px;-->
+<!--            margin-right: 10px;-->
+<!--            margin-bottom: 5px;-->
+<!--            font-size: 13px;-->
+<!--            line-height: 1.5;-->
+<!--            font-weight: normal;-->
+<!--            text-align: center;-->
+<!--            white-space: nowrap;-->
+<!--            vertical-align: middle;-->
+<!--            touch-action: manipulation;-->
+<!--            cursor: pointer;-->
+<!--            background-image: none;-->
+<!--            border: 1px solid var(&#45;&#45;grey-color);-->
+<!--            padding: 6px 10px;-->
+<!--            border-radius: 2px;-->
+<!--            color: var(&#45;&#45;primary-color);-->
+<!--            background-color: #ffffff;-->
+<!--        }-->
 
-        .login-buttons .google-login, .sso-login {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+<!--        .login-buttons .google-login, .sso-login {-->
+<!--            display: flex;-->
+<!--            align-items: center;-->
+<!--            justify-content: center;-->
+<!--        }-->
 
-        .google-login img, .sso-login img {
-            margin: -2px 5px 0 0;
-            width: 16px;
-            height: 16px;
-        }
+<!--        .google-login img, .sso-login img {-->
+<!--            margin: -2px 5px 0 0;-->
+<!--            width: 16px;-->
+<!--            height: 16px;-->
+<!--        }-->
 
-        .google-login span, .sso-login span {
-            color: var(--primary-color);
-            font-size: 13px;
-            font-family: var(--second-font);
-            line-height: 1.5;
-            text-align: center;
-            padding-top: 1px;
-        }
+<!--        .google-login span, .sso-login span {-->
+<!--            color: var(&#45;&#45;primary-color);-->
+<!--            font-size: 13px;-->
+<!--            font-family: var(&#45;&#45;second-font);-->
+<!--            line-height: 1.5;-->
+<!--            text-align: center;-->
+<!--            padding-top: 1px;-->
+<!--        }-->
 
-        .sso-login:hover {
-            background-color: #F1F1F3;
-            border: none;
-        }
+<!--        .sso-login:hover {-->
+<!--            background-color: #F1F1F3;-->
+<!--            border: none;-->
+<!--        }-->
 
-        .google-login:hover {
-            background-color: #F1F1F3;
-            border: none;
-        }
+<!--        .google-login:hover {-->
+<!--            background-color: #F1F1F3;-->
+<!--            border: none;-->
+<!--        }-->
 
-        .footer-container {
-            padding: 23px 20px;
-            background-color: #ffffff;
-            border: 1px solid var(--border-box-color);
-            color: var(--font-primary-color);
-            border-bottom-left-radius: 3px;
-            border-bottom-right-radius: 3px;
-            border-bottom: none;
-        }
+<!--        .footer-container {-->
+<!--            padding: 23px 20px;-->
+<!--            background-color: #ffffff;-->
+<!--            border: 1px solid var(&#45;&#45;border-box-color);-->
+<!--            color: var(&#45;&#45;font-primary-color);-->
+<!--            border-bottom-left-radius: 3px;-->
+<!--            border-bottom-right-radius: 3px;-->
+<!--            border-bottom: none;-->
+<!--        }-->
 
-        .footer-container footer {
-            padding-right: 5px;
-            padding-left: 5px;
-            margin-right: auto;
-            margin-left: auto;
-        }
+<!--        .footer-container footer {-->
+<!--            padding-right: 5px;-->
+<!--            padding-left: 5px;-->
+<!--            margin-right: auto;-->
+<!--            margin-left: auto;-->
+<!--        }-->
 
-        .footer-container button {
-            font-size: 13px;
-            font-family: var(--second-font);
-            line-height: 1.5;
-            color: var(--primary-color);
-            display: inline-block;
-            border-color: transparent;
-            background-color: #ffffff;
-            cursor: pointer;
-        }
+<!--        .footer-container button {-->
+<!--            font-size: 13px;-->
+<!--            font-family: var(&#45;&#45;second-font);-->
+<!--            line-height: 1.5;-->
+<!--            color: var(&#45;&#45;primary-color);-->
+<!--            display: inline-block;-->
+<!--            border-color: transparent;-->
+<!--            background-color: #ffffff;-->
+<!--            cursor: pointer;-->
+<!--        }-->
 
-        .credentials {
-            max-width: 1135px;
-            margin: 0 auto;
-            padding: 20px 0;
-        }
+<!--        .legal-links a {-->
+<!--            color: #888;-->
+<!--            font-family: var(&#45;&#45;second-font);-->
+<!--            font-size: 10px;-->
+<!--            font-weight: 400;-->
+<!--            text-decoration: underline;-->
+<!--        }-->
 
-        .legal-links a {
-            color: #888;
-            font-family: var(--second-font);
-            font-size: 10px;
-            font-weight: 400;
-            text-decoration: underline;
-        }
+<!--        .legal-links a:hover {-->
+<!--            text-decoration: underline;-->
+<!--        }-->
 
-        .legal-links a:hover {
-            text-decoration: underline;
-        }
+<!--        .footer-element {-->
+<!--            text-decoration: none;-->
+<!--            color: var(&#45;&#45;primary-color);-->
+<!--            font-family: var(&#45;&#45;second-font);-->
+<!--            font-size: 13px;-->
+<!--            font-weight: 400;-->
 
-        .footer-element {
-            text-decoration: none;
-            color: var(--primary-color);
-            font-family: var(--second-font);
-            font-size: 13px;
-            font-weight: 400;
+<!--        }-->
 
-        }
-
-        .footer-element:hover{
-            text-decoration: underline;
-        }
+<!--        .footer-element:hover{-->
+<!--            text-decoration: underline;-->
+<!--        }-->
 
 
-        .error-message {
-            font-family: Helvetica;
-            font-size: 13px;
-            margin-top: -14px;
-            margin-bottom: 24px;
-            color: rgb(227, 30, 30) ;
-            display: none;
-        }
-        input:focus {
-            box-shadow: 0 0 8px rgba(109, 109, 109, 0.8); /* Ombre bleue légère */
-            outline: none;
-        }
+<!--        .error-message {-->
+<!--            font-family: Helvetica;-->
+<!--            font-size: 13px;-->
+<!--            margin-top: -14px;-->
+<!--            margin-bottom: 24px;-->
+<!--            color: rgb(227, 30, 30) ;-->
+<!--            display: none;-->
+<!--        }-->
+<!--        input:focus {-->
+<!--            box-shadow: 0 0 8px rgba(109, 109, 109, 0.8); /* Ombre bleue légère */-->
+<!--            outline: none;-->
+<!--        }-->
 
-        .date {
-            font-family: var(--second-font);
-            color: var(--primary-color);
-            font-size: 10px;
-            font-weight: 400;
-        }
+<!--        .date {-->
+<!--            font-family: var(&#45;&#45;second-font);-->
+<!--            color: var(&#45;&#45;primary-color);-->
+<!--            font-size: 10px;-->
+<!--            font-weight: 400;-->
+<!--        }-->
 
-        .footer-text {
-            font-family: var(--second-font);
-            color: rgb(102, 102, 102);
-            font-size: 10px;
-            font-weight: 400;
-            line-height: 15px;
-        }
+<!--        .footer-text {-->
+<!--            font-family: var(&#45;&#45;second-font);-->
+<!--            color: rgb(102, 102, 102);-->
+<!--            font-size: 10px;-->
+<!--            font-weight: 400;-->
+<!--            line-height: 15px;-->
+<!--        }-->
 
-        .dropdown-select {
-            position: absolute;
-            width: 200px;
-            height: 34px;
-            padding: 6px 10px;
-            font-size: 13px;
-            line-height: 1.5;
-            color: #555555;
-            background-color: #fff;
-            background-image: none;
-            border-radius: 2px;
-            border: 1px solid #ccc;
-            margin-bottom: 20px;
-            margin-top: -27px;
-            margin-left: 955px;
-        }
+<!--        .dropdown-select {-->
+<!--            position: absolute;-->
+<!--            width: 200px;-->
+<!--            height: 34px;-->
+<!--            padding: 6px 10px;-->
+<!--            font-size: 13px;-->
+<!--            line-height: 1.5;-->
+<!--            color: #555555;-->
+<!--            background-color: #fff;-->
+<!--            background-image: none;-->
+<!--            border-radius: 2px;-->
+<!--            border: 1px solid #ccc;-->
+<!--            margin-bottom: 20px;-->
+<!--            margin-top: -27px;-->
+<!--            margin-left: 955px;-->
+<!--        }-->
 
 
 
 
-        /* Responsive Design */
-        @media screen and (max-width: 768px) {
-            .content-container {
-                max-width: 100%;
-                padding: 15px;
-            }
+<!--        /* Responsive Design */-->
+<!--        @media screen and (max-width: 768px) {-->
+<!--            .content-container {-->
+<!--                max-width: 100%;-->
+<!--                padding: 15px;-->
+<!--            }-->
 
-            .inner-container, .footer-container {
-                max-width: 100%;
-            }
+<!--            .inner-container, .footer-container {-->
+<!--                max-width: 100%;-->
+<!--            }-->
 
 
-        }
+<!--        }-->
 
-        @media screen and (max-width: 480px) {
-            .content-container, .inner-container, .footer-container {
-                padding: 10px;
-            }
+<!--        @media screen and (max-width: 480px) {-->
+<!--            .content-container, .inner-container, .footer-container {-->
+<!--                padding: 10px;-->
+<!--            }-->
 
-            .google-login, .sso-login {
-                padding: 8px;
-                font-size: 12px;
-            }
-        }
-        @media screen and (max-width: 1250px) {
-            .dropdown-select {
-                position: absolute;
-                width: 200px;
-                height: 34px;
-                padding: 6px 10px;
-                font-size: 13px;
-                line-height: 1.5;
-                color: #555555;
-                background-color: #fff;
-                background-image: none;
-                border-radius: 2px;
-                border: 1px solid #ccc;
-                margin-bottom: 20px;
-                margin-top: -27px;
-                margin-left: 75%;
-            }
-        }
-        @media screen and (max-width: 1050px) {
-            .dropdown-select {
-                position: absolute;
-                width: 200px;
-                height: 34px;
-                padding: 6px 10px;
-                font-size: 13px;
-                line-height: 1.5;
-                color: #555555;
-                background-color: #fff;
-                background-image: none;
-                border-radius: 2px;
-                border: 1px solid #ccc;
-                margin-bottom: 20px;
-                margin-top: -27px;
-                margin-left: 70%;
-            }
-        }
-        @media screen and (max-width: 810px) {
-            .dropdown-select {
-                position: absolute;
-                width: 200px;
-                height: 34px;
-                padding: 6px 10px;
-                font-size: 13px;
-                line-height: 1.5;
-                color: #555555;
-                background-color: #fff;
-                background-image: none;
-                border-radius: 2px;
-                border: 1px solid #ccc;
-                margin-bottom: 20px;
-                margin-top: -27px;
-                margin-left: 65%;
-            }
-        }
-    </style>
+<!--            .google-login, .sso-login {-->
+<!--                padding: 8px;-->
+<!--                font-size: 12px;-->
+<!--            }-->
+<!--        }-->
+<!--        @media screen and (max-width: 1250px) {-->
+<!--            .dropdown-select {-->
+<!--                position: absolute;-->
+<!--                width: 200px;-->
+<!--                height: 34px;-->
+<!--                padding: 6px 10px;-->
+<!--                font-size: 13px;-->
+<!--                line-height: 1.5;-->
+<!--                color: #555555;-->
+<!--                background-color: #fff;-->
+<!--                background-image: none;-->
+<!--                border-radius: 2px;-->
+<!--                border: 1px solid #ccc;-->
+<!--                margin-bottom: 20px;-->
+<!--                margin-top: -27px;-->
+<!--                margin-left: 75%;-->
+<!--            }-->
+<!--        }-->
+<!--        @media screen and (max-width: 1050px) {-->
+<!--            .dropdown-select {-->
+<!--                position: absolute;-->
+<!--                width: 200px;-->
+<!--                height: 34px;-->
+<!--                padding: 6px 10px;-->
+<!--                font-size: 13px;-->
+<!--                line-height: 1.5;-->
+<!--                color: #555555;-->
+<!--                background-color: #fff;-->
+<!--                background-image: none;-->
+<!--                border-radius: 2px;-->
+<!--                border: 1px solid #ccc;-->
+<!--                margin-bottom: 20px;-->
+<!--                margin-top: -27px;-->
+<!--                margin-left: 70%;-->
+<!--            }-->
+<!--        }-->
+<!--        @media screen and (max-width: 810px) {-->
+<!--            .dropdown-select {-->
+<!--                position: absolute;-->
+<!--                width: 200px;-->
+<!--                height: 34px;-->
+<!--                padding: 6px 10px;-->
+<!--                font-size: 13px;-->
+<!--                line-height: 1.5;-->
+<!--                color: #555555;-->
+<!--                background-color: #fff;-->
+<!--                background-image: none;-->
+<!--                border-radius: 2px;-->
+<!--                border: 1px solid #ccc;-->
+<!--                margin-bottom: 20px;-->
+<!--                margin-top: -27px;-->
+<!--                margin-left: 65%;-->
+<!--            }-->
+<!--        }-->
+<!--    </style>-->
 </head>
 
 <body>
@@ -448,26 +444,32 @@
         <div class="outer-container">
             <div class="content-container">
                 <div class="logo">
-                    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="240" height="40" viewBox="0 0 240 40"><defs><style>.cls-1{fill:#fff;}.cls-1,.cls-2,.cls-4,.cls-5,.cls-6,.cls-7{fill-rule:evenodd;}.cls-2{fill:#565a5c;}.cls-3{mask:url(#mask);}.cls-4{fill:#da291c;}.cls-5{fill:#222;}.cls-6{fill:#ff7a00;}.cls-7{fill:#0684bc;}</style><mask id="mask" x="0" y="3.42" width="240" height="32.8" maskUnits="userSpaceOnUse"><g id="mask-2"><polygon id="path-1" class="cls-1" points="0 36.22 240 36.22 240 3.42 0 3.42 0 36.22"/></g></mask></defs><g id="avaya_300x41"><g id="Group-42"><path id="Fill-1" class="cls-2" d="M76.24,11.07a7.3,7.3,0,0,1,7.3-7.55,7.66,7.66,0,0,1,5.69,2.34l-.78.78a6.77,6.77,0,0,0-4.91-2.13A6.25,6.25,0,0,0,77.38,11a6.27,6.27,0,0,0,6.16,6.56,6.79,6.79,0,0,0,5-2.24l.73.73a7.72,7.72,0,0,1-5.79,2.55,7.29,7.29,0,0,1-7.25-7.55"/><polygon id="Fill-3" class="cls-2" points="91.74 3.78 92.83 3.78 92.83 17.32 101.39 17.32 101.39 18.31 91.74 18.31 91.74 3.78"/><path id="Fill-5" class="cls-2" d="M116.16,11.07A6.22,6.22,0,1,0,103.74,11a6.22,6.22,0,1,0,12.42.05m-13.51,0A7.32,7.32,0,0,1,110,3.52a7.24,7.24,0,0,1,7.31,7.5v.05a7.31,7.31,0,0,1-7.36,7.5,7.23,7.23,0,0,1-7.3-7.5"/><path id="Fill-7" class="cls-2" d="M120.24,12.27V3.78h1.09v8.39c0,3.43,1.88,5.41,5,5.41s4.85-1.77,4.85-5.31V3.78h1.1v8.39c0,4.16-2.45,6.4-6,6.4s-6.05-2.24-6.05-6.3"/><path id="Fill-9" class="cls-2" d="M140.59,17.32c4.07,0,6.63-2.76,6.63-6.25V11c0-3.44-2.56-6.25-6.63-6.25h-3.76V17.32ZM135.74,3.78h4.85c4.59,0,7.78,3.13,7.78,7.24s-3.19,7.29-7.78,7.29h-4.85Z"/><path id="Fill-11" class="cls-2" d="M170.13,11.07A6.22,6.22,0,1,0,157.71,11a6.22,6.22,0,1,0,12.42.05m-13.52,0A7.32,7.32,0,0,1,164,3.52a7.24,7.24,0,0,1,7.31,7.5v.05a7.34,7.34,0,1,1-14.67,0"/><polygon id="Fill-13" class="cls-2" points="174.41 3.78 184.69 3.78 184.69 4.82 175.51 4.82 175.51 10.76 183.75 10.76 183.75 11.75 175.51 11.75 175.51 18.31 174.41 18.31 174.41 3.78"/><polygon id="Fill-15" class="cls-2" points="187.56 3.78 197.85 3.78 197.85 4.82 188.66 4.82 188.66 10.76 196.91 10.76 196.91 11.75 188.66 11.75 188.66 18.31 187.56 18.31 187.56 3.78"/><g class="cls-3"><polygon id="Fill-17" class="cls-2" points="200.87 18.36 201.97 18.36 201.97 3.78 200.87 3.78 200.87 18.36"/></g><g class="cls-3"><path id="Fill-19" class="cls-2" d="M205.26,11.07a7.31,7.31,0,0,1,7.31-7.55,7.68,7.68,0,0,1,5.69,2.34l-.79.78a6.67,6.67,0,0,0-4.9-2.13A6.22,6.22,0,0,0,206.41,11a6.26,6.26,0,0,0,6.16,6.56,6.81,6.81,0,0,0,5-2.24l.73.73a7.76,7.76,0,0,1-5.8,2.55,7.3,7.3,0,0,1-7.25-7.55"/></g><g class="cls-3"><polygon id="Fill-20" class="cls-2" points="220.76 3.78 231.15 3.78 231.15 4.82 221.86 4.82 221.86 10.55 230.21 10.55 230.21 11.54 221.86 11.54 221.86 17.37 231.25 17.37 231.25 18.31 220.76 18.31 220.76 3.78"/></g><g class="cls-3"><polygon id="Fill-21" class="cls-4" points="61.2 14.22 66.19 14.22 66.98 16.18 60.25 16.18 59.19 18.45 56.22 18.45 63.59 3.42 65.66 3.42 72.98 18.45 70.06 18.45 64.6 6.86 61.2 14.22"/></g><g class="cls-3"><polygon id="Fill-22" class="cls-4" points="4.99 14.22 9.97 14.22 10.77 16.18 4.03 16.18 2.97 18.45 0 18.45 7.37 3.42 9.44 3.42 16.76 18.45 13.79 18.45 8.38 6.86 4.99 14.22"/></g><g class="cls-3"><polygon id="Fill-23" class="cls-4" points="32.99 14.22 37.97 14.22 38.77 16.18 32.03 16.18 30.97 18.45 28 18.45 35.38 3.42 37.44 3.42 44.81 18.45 41.79 18.45 36.38 6.86 32.99 14.22"/></g><g class="cls-3"><polygon id="Fill-24" class="cls-4" points="14 3.42 21.37 18.45 21.48 18.45 23.28 18.45 23.44 18.45 30.81 3.42 27.84 3.42 22.38 15.28 16.97 3.42 14 3.42"/></g><g class="cls-3"><polygon id="Fill-25" class="cls-4" points="48.9 24.11 59.08 3.42 56.11 3.42 50.44 15.49 45.24 3.42 42.27 3.42 48.95 18.45 46.03 24.11 48.9 24.11"/></g><g class="cls-3"><path id="Fill-26" class="cls-5" d="M160.58,33a1.53,1.53,0,0,0,1.22-.5,2.2,2.2,0,0,0,.42-1.43v-.58A2.13,2.13,0,0,0,161.8,29a1.51,1.51,0,0,0-1.22-.51,1.55,1.55,0,0,0-1.2.5,1.92,1.92,0,0,0-.44,1.31v.81a1.93,1.93,0,0,0,.44,1.32,1.55,1.55,0,0,0,1.2.5m.12.8a1.93,1.93,0,0,1-1-.25,2.62,2.62,0,0,1-.71-.7h-.05l-.13.81H158V25.07h.92v2.74a2.89,2.89,0,0,1,0,.43,3.26,3.26,0,0,1-.06.38l0,0a2.32,2.32,0,0,1,.75-.67,2.12,2.12,0,0,1,1.09-.27,2.15,2.15,0,0,1,1.75.8,3.43,3.43,0,0,1,.65,2.23A4.28,4.28,0,0,1,163,32a2.76,2.76,0,0,1-.49.95,2.37,2.37,0,0,1-.78.59,2.48,2.48,0,0,1-1,.19"/></g><g class="cls-3"><path id="Fill-27" class="cls-5" d="M164.53,36.22a2.24,2.24,0,0,1-.38,0l-.33-.06v-.76l.34.06.33,0a.91.91,0,0,0,.71-.29,2.48,2.48,0,0,0,.51-.85l.27-.65-2.24-5.83h.95l1.47,4c.05.14.1.27.14.41a2.59,2.59,0,0,1,.09.4h.07a2.59,2.59,0,0,1,.09-.4c0-.14.09-.27.14-.41l1.44-4h1l-2.63,6.74a3.18,3.18,0,0,1-.78,1.23,1.69,1.69,0,0,1-1.15.41"/></g><g class="cls-3"><polygon id="Fill-28" class="cls-6" points="229.82 33.61 231.21 33.61 231.21 24.75 229.82 24.75 229.82 33.61"/></g><g class="cls-3"><path id="Fill-29" class="cls-6" d="M226.06,32.69c-.54,0-.88-.26-.88-.7s.36-.77,1-.77h1.21v.08a1.25,1.25,0,0,1-1.34,1.39m.28-5a2.2,2.2,0,0,0-2.45,1.89h1.37c.09-.48.45-.76,1.08-.76a1,1,0,0,1,1.06,1.07v.3H226c-1.29,0-2.25.58-2.25,1.75a1.7,1.7,0,0,0,1.91,1.79,1.83,1.83,0,0,0,1.76-1h.06v.82h1.32V30c0-1.41-.73-2.25-2.46-2.25"/></g><g class="cls-3"><path id="Fill-30" class="cls-6" d="M221.29,33.61v-3a1.34,1.34,0,0,1,1.43-1.45h.54V27.86h-.56a1.49,1.49,0,0,0-1.44.82h0v-.82h-1.3v5.76Z"/></g><g class="cls-3"><path id="Fill-31" class="cls-6" d="M219,32.34v1.27h-.94c-1.33,0-2.06-.61-2.06-1.94V29h-1V27.86h1V26.34h1.39v1.52H219V29h-1.61v2.51a.77.77,0,0,0,.84.83Z"/></g><g class="cls-3"><path id="Fill-32" class="cls-6" d="M210.52,33.61V30.28a1.24,1.24,0,0,1,1.31-1.34,1.16,1.16,0,0,1,1.25,1.33v3.34h1.39V30c0-1.45-.7-2.32-2.14-2.32a2,2,0,0,0-1.85.93h0v-.79h-1.3v5.76Z"/></g><g class="cls-3"><path id="Fill-33" class="cls-6" d="M205.4,28.88a1.32,1.32,0,0,1,1.49,1.23h-3a1.37,1.37,0,0,1,1.49-1.23m0,3.74a1.43,1.43,0,0,1-1.49-1.51h4.25v-.45a2.69,2.69,0,0,0-2.77-2.94,2.79,2.79,0,0,0-2.85,3,2.75,2.75,0,0,0,2.85,3,2.52,2.52,0,0,0,2.67-1.89h-1.35c-.15.43-.51.75-1.31.75"/></g><g class="cls-3"><path id="Fill-34" class="cls-6" d="M198.39,33.77a3.25,3.25,0,0,0,3.53-2.86h-1.41a2,2,0,0,1-2.12,1.5c-1.37,0-2.48-.94-2.48-3s1.11-3,2.48-3a1.92,1.92,0,0,1,2.12,1.49h1.41c-.23-1.71-1.39-2.82-3.53-2.82-2.3,0-4,1.6-4,4.34s1.66,4.35,4,4.35Z"/></g><g class="cls-3"><path id="Fill-35" class="cls-7" d="M190.6,32.37c-.92,0-1.51-.58-1.51-1.7s.58-1.7,1.51-1.7,1.5.57,1.5,1.7-.59,1.7-1.5,1.7Zm1.57-4.51v.79h-.07a2,2,0,0,0-1.88-.93,2.66,2.66,0,0,0-2.56,3,2.67,2.67,0,0,0,2.56,3,2,2,0,0,0,1.81-1h.07v1.22a.85.85,0,0,1-.95.94h-2.82v1.24h2.79a2.12,2.12,0,0,0,2.38-2.28V27.86Z"/></g><g class="cls-3"><path id="Fill-36" class="cls-7" d="M182.85,33.61V30.28a1.25,1.25,0,0,1,1.32-1.35,1.17,1.17,0,0,1,1.25,1.34v3.34h1.39V30c0-1.45-.7-2.32-2.15-2.32a2.06,2.06,0,0,0-1.85.93h0v-.79h-1.31v5.76Z"/></g><g class="cls-3"><polygon id="Fill-37" class="cls-7" points="178.9 33.61 180.29 33.61 180.29 27.86 178.9 27.86 178.9 33.61"/></g><g class="cls-3"><path id="Fill-38" class="cls-7" d="M175,29h-1.57V26.52H175c.78,0,1.38.33,1.38,1.24S175.8,29,175,29m1.46.66v-.06a1.88,1.88,0,0,0,1.43-2.09c0-1.32-1-2.27-2.81-2.27H172v8.38h1.44V30.28h1.75a1.08,1.08,0,0,1,1.22,1.22v2.12h1.44V31.5a1.61,1.61,0,0,0-1.38-1.85"/></g><g class="cls-3"><path id="Fill-39" class="cls-6" d="M179.59,26.94a.87.87,0,0,0,.52-.16.91.91,0,0,0,.34-.41.88.88,0,0,0,.05-.53.89.89,0,0,0-.25-.48.94.94,0,0,0-.47-.25,1,1,0,0,0-.54.05.91.91,0,0,0-.41.34,1,1,0,0,0-.16.52.86.86,0,0,0,.16.51.91.91,0,0,0,.41.34.84.84,0,0,0,.35.07"/></g><g class="cls-3"><path id="Fill-40" class="cls-6" d="M178.54,23.46a2.78,2.78,0,0,0-.9.6l.65.66a1.78,1.78,0,0,1,.6-.41,1.86,1.86,0,0,1,.7-.14,2,2,0,0,1,.71.14,1.86,1.86,0,0,1,.6.4l.65-.65a2.75,2.75,0,0,0-3-.6"/></g><g class="cls-3"><path id="Fill-41" class="cls-2" d="M237.54,6.76a.44.44,0,0,0-.06-.23.42.42,0,0,0-.17-.18.73.73,0,0,0-.25-.08l-.33,0h-.55V7.41h.47a2.15,2.15,0,0,0,.4,0,.6.6,0,0,0,.28-.12.54.54,0,0,0,.16-.21.7.7,0,0,0,0-.28Zm1.31,2.44H238l-1.24-1.32h-.6V9.2h-.62V5.79h1.17a4.45,4.45,0,0,1,.57,0,1.18,1.18,0,0,1,.45.14,1,1,0,0,1,.35.31.88.88,0,0,1,.11.45.9.9,0,0,1-.21.61,1.54,1.54,0,0,1-.58.38Zm.72-1.64a2.77,2.77,0,0,0-.82-2,2.8,2.8,0,0,0-4,0,2.77,2.77,0,0,0-.82,2,2.73,2.73,0,0,0,.82,2,2.78,2.78,0,0,0,4,0,2.73,2.73,0,0,0,.82-2Zm.43,0a3.11,3.11,0,0,1-.95,2.28,3.21,3.21,0,0,1-4.56,0,3.11,3.11,0,0,1-1-2.28,3.11,3.11,0,0,1,1-2.28,3.21,3.21,0,0,1,4.56,0A3.11,3.11,0,0,1,240,7.56Z"/></g></g></g></svg>
+                    <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="240" height="40" viewBox="0 0 240 40"><defs><style>.cls-1{fill:#fff;}.cls-1,.cls-2,.cls-4,.cls-5,.cls-6,.cls-7{fill-rule:evenodd;}.cls-2{fill:#565a5c;}.cls-3{mask:url(#mask);}.cls-4{fill:#da291c;}.cls-5{fill:#222;}.cls-6{fill:#ff7a00;}.cls-7{fill:#0684bc;}</style><mask id="mask" x="0" y="3.42" width="240" height="32.8" maskUnits="userSpaceOnUse"><g id="mask-2"><polygon id="path-1" class="cls-1" points="0 36.22 240 36.22 240 3.42 0 3.42 0 36.22"/></g></mask></defs><g id="avaya_300x41"><g id="Group-42"><path id="Fill-1" class="cls-2" d="M76.24,11.07a7.3,7.3,0,0,1,7.3-7.55,7.66,7.66,0,0,1,5.69,2.34l-.78.78a6.77,6.77,0,0,0-4.91-2.13A6.25,6.25,0,0,0,77.38,11a6.27,6.27,0,0,0,6.16,6.56,6.79,6.79,0,0,0,5-2.24l.73.73a7.72,7.72,0,0,1-5.79,2.55,7.29,7.29,0,0,1-7.25-7.55"/><polygon id="Fill-3" class="cls-2" points="91.74 3.78 92.83 3.78 92.83 17.32 101.39 17.32 101.39 18.31 91.74 18.31 91.74 3.78"/><path id="Fill-5" class="cls-2" d="M116.16,11.07A6.22,6.22,0,1,0,103.74,11a6.22,6.22,0,1,0,12.42.05m-13.51,0A7.32,7.32,0,0,1,110,3.52a7.24,7.24,0,0,1,7.31,7.5v.05a7.31,7.31,0,0,1-7.36,7.5,7.23,7.23,0,0,1-7.3-7.5"/><path id="Fill-7" class="cls-2" d="M120.24,12.27V3.78h1.09v8.39c0,3.43,1.88,5.41,5,5.41s4.85-1.77,4.85-5.31V3.78h1.1v8.39c0,4.16-2.45,6.4-6,6.4s-6.05-2.24-6.05-6.3"/><path id="Fill-9" class="cls-2" d="M140.59,17.32c4.07,0,6.63-2.76,6.63-6.25V11c0-3.44-2.56-6.25-6.63-6.25h-3.76V17.32ZM135.74,3.78h4.85c4.59,0,7.78,3.13,7.78,7.24s-3.19,7.29-7.78,7.29h-4.85Z"/><path id="Fill-11" class="cls-2" d="M170.13,11.07A6.22,6.22,0,1,0,157.71,11a6.22,6.22,0,1,0,12.42.05m-13.52,0A7.32,7.32,0,0,1,164,3.52a7.24,7.24,0,0,1,7.31,7.5v.05a7.34,7.34,0,1,1-14.67,0"/><polygon id="Fill-13" class="cls-2" points="174.41 3.78 184.69 3.78 184.69 4.82 175.51 4.82 175.51 10.76 183.75 10.76 183.75 11.75 175.51 11.75 175.51 18.31 174.41 18.31 174.41 3.78"/><polygon id="Fill-15" class="cls-2" points="187.56 3.78 197.85 3.78 197.85 4.82 188.66 4.82 188.66 10.76 196.91 10.76 196.91 11.75 188.66 11.75 188.66 18.31 187.56 18.31 187.56 3.78"/><g class="cls-3"><polygon id="Fill-17" class="cls-2" points="200.87 18.36 201.97 18.36 201.97 3.78 200.87 3.78 200.87 18.36"/></g><g class="cls-3"><path id="Fill-19" class="cls-2" d="M205.26,11.07a7.31,7.31,0,0,1,7.31-7.55,7.68,7.68,0,0,1,5.69,2.34l-.79.78a6.67,6.67,0,0,0-4.9-2.13A6.22,6.22,0,0,0,206.41,11a6.26,6.26,0,0,0,6.16,6.56,6.81,6.81,0,0,0,5-2.24l.73.73a7.76,7.76,0,0,1-5.8,2.55,7.3,7.3,0,0,1-7.25-7.55"/></g><g class="cls-3"><polygon id="Fill-20" class="cls-2" points="220.76 3.78 231.15 3.78 231.15 4.82 221.86 4.82 221.86 10.55 230.21 10.55 230.21 11.54 221.86 11.54 221.86 17.37 231.25 17.37 231.25 18.31 220.76 18.31 220.76 3.78"/></g><g class="cls-3"><polygon id="Fill-21" class="cls-4" points="61.2 14.22 66.19 14.22 66.98 16.18 60.25 16.18 59.19 18.45 56.22 18.45 63.59 3.42 65.66 3.42 72.98 18.45 70.06 18.45 64.6 6.86 61.2 14.22"/></g><g class="cls-3"><polygon id="Fill-22" class="cls-4" points="4.99 14.22 9.97 14.22 10.77 16.18 4.03 16.18 2.97 18.45 0 18.45 7.37 3.42 9.44 3.42 16.76 18.45 13.79 18.45 8.38 6.86 4.99 14.22"/></g><g class="cls-3"><polygon id="Fill-23" class="cls-4" points="32.99 14.22 37.97 14.22 38.77 16.18 32.03 16.18 30.97 18.45 28 18.45 35.38 3.42 37.44 3.42 44.81 18.45 41.79 18.45 36.38 6.86 32.99 14.22"/></g><g class="cls-3"><polygon id="Fill-24" class="cls-4" points="14 3.42 21.37 18.45 21.48 18.45 23.28 18.45 23.44 18.45 30.81 3.42 27.84 3.42 22.38 15.28 16.97 3.42 14 3.42"/></g><g class="cls-3"><polygon id="Fill-25" class="cls-4" points="48.9 24.11 59.08 3.42 56.11 3.42 50.44 15.49 45.24 3.42 42.27 3.42 48.95 18.45 46.03 24.11 48.9 24.11"/></g><g class="cls-3"><path id="Fill-26" class="cls-5" d="M160.58,33a1.53,1.53,0,0,0,1.22-.5,2.2,2.2,0,0,0,.42-1.43v-.58A2.13,2.13,0,0,0,161.8,29a1.51,1.51,0,0,0-1.22-.51,1.55,1.55,0,0,0-1.2.5,1.92,1.92,0,0,0-.44,1.31v.81a1.93,1.93,0,0,0,.44,1.32,1.55,1.55,0,0,0,1.2.5m.12.8a1.93,1.93,0,0,1-1-.25,2.62,2.62,0,0,1-.71-.7h-.05l-.13.81H158V25.07h.92v2.74a2.89,2.89,0,0,1,0,.43,3.26,3.26,0,0,1-.06.38l0,0a2.32,2.32,0,0,1,.75-.67,2.12,2.12,0,0,1,1.09-.27,2.15,2.15,0,0,1,1.75.8,3.43,3.43,0,0,1,.65,2.23A4.28,4.28,0,0,1,163,32a2.76,2.76,0,0,1-.49.95,2.37,2.37,0,0,1-.78.59,2.48,2.48,0,0,1-1,.19"/></g><g class="cls-3"><path id="Fill-27" class="cls-5" d="M164.53,36.22a2.24,2.24,0,0,1-.38,0l-.33-.06v-.76l.34.06.33,0a.91.91,0,0,0,.71-.29,2.48,2.48,0,0,0,.51-.85l.27-.65-2.24-5.83h.95l1.47,4c.05.14.1.27.14.41a2.59,2.59,0,0,1,.09.4h.07a2.59,2.59,0,0,1,.09-.4c0-.14.09-.27.14-.41l1.44-4h1l-2.63,6.74a3.18,3.18,0,0,1-.78,1.23,1.69,1.69,0,0,1-1.15.41"/></g><g class="cls-3"><polygon id="Fill-28" class="cls-6" points="229.82 33.61 231.21 33.61 231.21 24.75 229.82 24.75 229.82 33.61"/></g><g class="cls-3"><path id="Fill-29" class="cls-6" d="M226.06,32.69c-.54,0-.88-.26-.88-.7s.36-.77,1-.77h1.21v.08a1.25,1.25,0,0,1-1.34,1.39m.28-5a2.2,2.2,0,0,0-2.45,1.89h1.37c.09-.48.45-.76,1.08-.76a1,1,0,0,1,1.06,1.07v.3H226c-1.29,0-2.25.58-2.25,1.75a1.7,1.7,0,0,0,1.91,1.79,1.83,1.83,0,0,0,1.76-1h.06v.82h1.32V30c0-1.41-.73-2.25-2.46-2.25"/></g><g class="cls-3"><path id="Fill-30" class="cls-6" d="M221.29,33.61v-3a1.34,1.34,0,0,1,1.43-1.45h.54V27.86h-.56a1.49,1.49,0,0,0-1.44.82h0v-.82h-1.3v5.76Z"/></g><g class="cls-3"><path id="Fill-31" class="cls-6" d="M219,32.34v1.27h-.94c-1.33,0-2.06-.61-2.06-1.94V29h-1V27.86h1V26.34h1.39v1.52H219V29h-1.61v2.51a.77.77,0,0,0,.84.83Z"/></g><g class="cls-3"><path id="Fill-32" class="cls-6" d="M210.52,33.61V30.28a1.24,1.24,0,0,1,1.31-1.34,1.16,1.16,0,0,1,1.25,1.33v3.34h1.39V30c0-1.45-.7-2.32-2.14-2.32a2,2,0,0,0-1.85.93h0v-.79h-1.3v5.76Z"/></g><g class="cls-3"><path id="Fill-33" class="cls-6" d="M205.4,28.88a1.32,1.32,0,0,1,1.49,1.23h-3a1.37,1.37,0,0,1,1.49-1.23m0,3.74a1.43,1.43,0,0,1-1.49-1.51h4.25v-.45a2.69,2.69,0,0,0-2.77-2.94,2.79,2.79,0,0,0-2.85,3,2.75,2.75,0,0,0,2.85,3,2.52,2.52,0,0,0,2.67-1.89h-1.35c-.15.43-.51.75-1.31.75"/></g><g class="cls-3"><path id="Fill-34" class="cls-6" d="M198.39,33.77a3.25,3.25,0,0,0,3.53-2.86h-1.41a2,2,0,0,1-2.12,1.5c-1.37,0-2.48-.94-2.48-3s1.11-3,2.48-3a1.92,1.92,0,0,1,2.12,1.49h1.41c-.23-1.71-1.39-2.82-3.53-2.82-2.3,0-4,1.6-4,4.34s1.66,4.35,4,4.35Z"/></g><g class="cls-3"><path id="Fill-35" class="cls-7" d="M190.6,32.37c-.92,0-1.51-.58-1.51-1.7s.58-1.7,1.51-1.7,1.5.57,1.5,1.7-.59,1.7-1.5,1.7Zm1.57-4.51v.79h-.07a2,2,0,0,0-1.88-.93,2.66,2.66,0,0,0-2.56,3,2.67,2.67,0,0,0,2.56,3,2,2,0,0,0,1.81-1h.07v1.22a.85.85,0,0,1-.95.94h-2.82v1.24h2.79a2.12,2.12,0,0,0,2.38-2.28V27.86Z"/></g><g class="cls-3"><path id="Fill-36" class="cls-7" d="M182.85,33.61V30.28a1.25,1.25,0,0,1,1.32-1.35,1.17,1.17,0,0,1,1.25,1.34v3.34h1.39V30c0-1.45-.7-2.32-2.15-2.32a2.06,2.06,0,0,0-1.85.93h0v-.79h-1.31v5.76Z"/></g><g class="cls-3"><polygon id="Fill-37" class="cls-7" points="178.9 33.61 180.29 33.61 180.29 27.86 178.9 27.86 178.9 33.61"/></g><g class="cls-3"><path id="Fill-38" class="cls-7" d="M175,29h-1.57V26.52H175c.78,0,1.38.33,1.38,1.24S175.8,29,175,29m1.46.66v-.06a1.88,1.88,0,0,0,1.43-2.09c0-1.32-1-2.27-2.81-2.27H172v8.38h1.44V30.28h1.75a1.08,1.08,0,0,1,1.22,1.22v2.12h1.44V31.5a1.61,1.61,0,0,0-1.38-1.85"/></g><g class="cls-3"><path id="Fill-39" class="cls-6" d="M179.59,26.94a.87.87,0,0,0,.52-.16.91.91,0,0,0,.34-.41.88.88,0,0,0,.05-.53.89.89,0,0,0-.25-.48.94.94,0,0,0-.47-.25,1,1,0,0,0-.54.05.91.91,0,0,0-.41.34,1,1,0,0,0-.16.52.86.86,0,0,0,.16.51.91.91,0,0,0,.41.34.84.84,0,0,0,.35.07"/></g><g class="cls-3"><path id="Fill-40" class="cls-6" d="M178.54,23.46a2.78,2.78,0,0,0-.9.6l.65.66a1.78,1.78,0,0,1,.6-.41,1.86,1.86,0,0,1,.7-.14,2,2,0,0,1,.71.14,1.86,1.86,0,0,1,.6.4l.65-.65a2.75,2.75,0,0,0-3-.6"/></g><g class="cls-3"><path id="Fill-41" class="cls-2" d="M237.54,6.76a.44.44,0,0,0-.06-.23.42.42,0,0,0-.17-.18.73.73,0,0,0-.25-.08l-.33,0h-.55V7.41h.47a2.15,2.15,0,0,0,.4,0,.6.6,0,0,0,.28-.12.54.54,0,0,0,.16-.21.7.7,0,0,0,0-.28Zm1.31,2.44H238l-1.24-1.32h-.6V9.2h-.62V5.79h1.17a4.45,4.45,0,0,1,.57,0,1.18,1.18,0,0,1,.45.14,1,1,0,0,1,.35.31.88.88,0,0,1,.11.45.9.9,0,0,1-.21.61,1.54,1.54,0,0,1-.58.38Zm.72-1.64a2.77,2.77,0,0,0-.82-2,2.8,2.8,0,0,0-4,0,2.77,2.77,0,0,0-.82,2,2.73,2.73,0,0,0,.82,2,2.78,2.78,0,0,0,4,0,2.73,2.73,0,0,0,.82-2Zm.43,0a3.11,3.11,0,0,1-.95,2.28,3.21,3.21,0,0,1-4.56,0,3.11,3.11,0,0,1-1-2.28,3.11,3.11,0,0,1,1-2.28,3.21,3.21,0,0,1,4.56,0A3.11,3.11,0,0,1,240,7.56Z"/></g></g></g></svg>
                 </div>
                 <div class="inner-container">
                     <h1  data-key="connexion">Connexion</h1>
                 </div>
                 <div class="inter-container">
-                    <form id="form-login">
-                        <div id="email-section">
-                            <label class="text">Adresse e-mail</label>
-                            <input class="input-group" type="text" id="email" required>
-                            <p class="error-message" id="email-error" style="display:none;">Saisissez une adresse e-mail.</p>
+                    <form id="form-login" class="rc-form" novalidate>
+                        <div id="email-section" class="form-group">
+                            <label for="email" class="control-label">Adresse e-mail ou numéro de téléphone</label>
+                            <div class="form-control__container standard">
+                                <input type="text" id="email" class="form-control" maxlength="999">
+                                <p class="error-message" id="email-error" style="display:none;">Saisissez une adresse e-mail.</p>
+                            </div>
                         </div>
 
-                        <div id="password-section" class="hidden">
-                            <label class="text">Mot de passe</label>
-                            <div class="input-group">
-                                <input type="password" id="password" required>
-                                <span class="toggle-password">Voir</span>
+                        <div id="password-section" class="form-group hidden">
+                            <label for="password" class="control-label">Mot de passe</label>
+                            <div class="form-control__container standard">
+                                <div class="password-input has-feedback">
+                                    <input type="password" id="password" class="form-control" maxlength="64">
+                                    <button type="button" class="form-control-feedback rc-button-icon-only btn btn-link toggle-password" aria-pressed="false">
+                                        <span class="rc-icon rc-icon-password-hide" aria-hidden="true">Voir</span>
+                                    </button>
+                                </div>
+                                <p class="error-message" id="password-error" style="display:none;">Saisissez un mot de passe.</p>
                             </div>
-                            <p class="error-message" id="password-error" style="display:none;">Saisissez un mot de passe.</p>
                         </div>
 
                         <div id="action-buttons">
@@ -590,7 +592,7 @@
             }
         }
 
-        // Fonction de validation de l'email (exemple simple)
+        // Fonction de validation de l'email
         function isValidEmail(email) {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return emailRegex.test(email);
@@ -813,51 +815,48 @@
         const passwordInput = document.getElementById('password');
         const nextBtn = document.getElementById('next-btn');
         const backBtn = document.getElementById('back-btn');
-        const submitBtn = document.getElementById('submit-btn');
+        const loginBtn = document.getElementById('login-btn');
         const emailError = document.getElementById('email-error');
         const passwordError = document.getElementById('password-error');
+        const emailLabel = document.querySelector('#email-section label');
 
-        // Fonction pour basculer l'affichage du mot de passe
+        // Désactiver la validation automatique du navigateur
+        formLogin.setAttribute('novalidate', true);
+
+        // Toggle Voir/Cacher mot de passe
         document.querySelector('.toggle-password').addEventListener('click', function () {
             const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
             passwordInput.setAttribute('type', type);
             this.textContent = type === 'password' ? 'Voir' : 'Cacher';
         });
 
-        // Lorsqu'on clique sur "Suivant"
+        // Bouton "Suivant"
         nextBtn.addEventListener('click', function (e) {
             e.preventDefault();
-
             const email = emailInput.value.trim();
-            if (email === "" || !isValidEmail(email)) {
+
+            if (email === "") {
                 emailError.style.display = 'block';
             } else {
                 emailError.style.display = 'none';
-                // Montrer la section du mot de passe
+                emailLabel.textContent = "Adresse e-mail";
                 emailSection.classList.add('hidden');
                 passwordSection.classList.remove('hidden');
-                backBtn.classList.remove('hidden');
                 nextBtn.classList.add('hidden');
-                submitBtn.classList.remove('hidden');
+                backBtn.classList.remove('hidden');
+                loginBtn.classList.remove('hidden');
             }
         });
 
-        // Lorsqu'on clique sur "Retour"
+        // Bouton "Retour"
         backBtn.addEventListener('click', function (e) {
             e.preventDefault();
-            // Cacher la section du mot de passe et revenir à l'état initial
             passwordSection.classList.add('hidden');
             emailSection.classList.remove('hidden');
             backBtn.classList.add('hidden');
             nextBtn.classList.remove('hidden');
-            submitBtn.classList.add('hidden');
+            loginBtn.classList.add('hidden');
         });
-
-        // Validation de l'email
-        function isValidEmail(email) {
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return emailRegex.test(email);
-        }
     });
 </script>
 </html>

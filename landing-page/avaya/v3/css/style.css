@@ -44,6 +44,7 @@ body {
 
 .content-container {
     max-width: 800px;
+    min-height: 475px;
     margin: 0 auto;
     overflow: hidden;
     padding: 20px;
@@ -115,6 +116,7 @@ body {
     border-radius: 2px;
     border: 1px solid #ccc;
     margin-bottom: 20px;
+    margin-top: 0;
 }
 
 .input-group {
@@ -137,11 +139,6 @@ body {
     font-size: 13px;
     cursor: pointer;
     margin-bottom: 10px;
-    display: inline-block;
-}
-
-.form-button:hover {
-    background-color: #484849;
 }
 
 .form-button {
@@ -153,12 +150,11 @@ body {
 }
 
 .form-button:hover {
-    background-color: #4A4A4B;
+    background-color: #484849;
 }
 
 .password-container {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     position: relative;
 }
@@ -168,10 +164,13 @@ body {
 }
 
 .password-container .toggle-password {
-    width: 20%;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
     background: none;
     border: none;
-    color: var(--primary-color);
+    color: #007bff;
     cursor: pointer;
     font-size: 12px;
 }
@@ -180,10 +179,22 @@ body {
     display: none;
 }
 
-#action-buttons {
+button#next-btn.form-button {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    gap: 10px;
+    text-align: right;
+    padding: 0 10rem 0 0;
+}
+
+button#back-btn.form-button {
+    gap: 10px;
+    text-align: right;
+    padding-left: 10rem;
+}
+
+button#login-form.form-button {
+
 }
 
 .error-message {
@@ -191,15 +202,6 @@ body {
     font-size: 12px;
 }
 
-.toggle-password {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    font-size: 12px;
-    color: #007bff;
-}
 
 .login-options {
     margin-top: 5px;
@@ -253,7 +255,7 @@ body {
 .login-buttons {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    margin-top: 20px;
 }
 
 .login-buttons button {
@@ -333,12 +335,6 @@ body {
     border-color: transparent;
     background-color: #ffffff;
     cursor: pointer;
-}
-
-.credentials {
-    max-width: 1135px;
-    margin: 0 auto;
-    padding: 20px 0;
 }
 
 .legal-links a {
